@@ -1,8 +1,14 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic",
-    "java.compile.nullAnalysis.mode": "disabled",
     "files.encoding": "utf8",
     "[java]": {
         "editor.defaultFormatter": "redhat.java"
-    }
+    },
+    "java.import.maven.enabled": false,
+    "java.project.sourcePaths": [
+        "src/main/java"
+    ],
+    "java.project.outputPath": "bin",
+    "java.autobuild.enabled": true,
+    "java.compile.nullAnalysis.mode": "disabled",
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

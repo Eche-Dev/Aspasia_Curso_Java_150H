@@ -1,83 +1,100 @@
-{
+﻿{
     "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
-            "name": "precioDescuento",
+            "name": "1) Ej1 - variables",
             "request": "launch",
-            "mainClass": "TAREAS.Novena_tarea.precioDescuento",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia1_Ejercicio1.Ej1",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "Ej1",
+            "name": "2) PProducto - variables",
             "request": "launch",
-            "mainClass": "PrimerEjecicioFacil.Ej1",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia1_Ejercicio2.PProducto",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "PProducto",
+            "name": "3) YoSolito - presentacion",
             "request": "launch",
-            "mainClass": "PrimerEjecicioFacil.PProducto",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia1_Ejercicio3.YoSolito",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "YoSolito",
+            "name": "4) Alumno (clase)",
             "request": "launch",
-            "mainClass": "PrimerEjecicioFacil.YoSolito",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia1_Ejercicio5.PAlumno",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "PAlumno",
+            "name": "5) Variables (clase)",
             "request": "launch",
-            "mainClass": "primervezenjava.PAlumno",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia1_Ejercicio7.VariableRun",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "VariableRun",
+            "name": "6) AngelEjercicio - teclado",
             "request": "launch",
-            "mainClass": "primervezenjava.Proyecto2.VariableRun",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia2_Ejercicio1.AngelEjercicio",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "AngelEjercicio",
+            "name": "7) PercioConDescuentos - precio/descuento/IVA",
             "request": "launch",
-            "mainClass": "SegundoDia.AngelEjercicio",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia2_Ejercicio2.PercioConDescuentos",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "AngelEjercios2 (triangulo)",
+            "name": "8) AngelEjercios2 - triangulo (area y perimetro)",
             "request": "launch",
-            "mainClass": "SegundoDia.AngelEjercios2",
-            "projectName": "Novena_tarea",
-            "console": "integratedTerminal"
+            "mainClass": "Dia2_Ejercicio3.AngelEjercios2",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "PercioConDescuentos",
+            "name": "9) AreaTriangulo - area del triangulo",
             "request": "launch",
-            "mainClass": "SegundoDia.PercioConDescuentos",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia3_Ejercicio1.AreaTriangulo",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "Compra (clase)",
+            "name": "10) Calculadora - descuento + IVA",
             "request": "launch",
-            "mainClass": "Tarea4_java.Compra",
-            "projectName": "Novena_tarea"
+            "mainClass": "Dia3_Ejercicio2.Calculadora",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Compilar proyecto (javac)"
         },
         {
             "type": "java",
-            "name": "PrecioConDescuentoEIVA",
+            "name": "11) PrecioConDescuentoEIVA (sencillo)",
             "request": "launch",
-            "mainClass": "Tarea4_java.PrecioConDescuentoEIVA",
-            "projectName": "Novena_tarea"
+            "mainClass": "Tarea4_Ejercicio1.PrecioConDescuentoEIVA",
+            "preLaunchTask": "Compilar proyecto (javac)"
+        },
+        {
+            "type": "java",
+            "name": "12) Compra (con clase)",
+            "request": "launch",
+            "mainClass": "Tarea4_Ejercicio2.Compra",
+            "preLaunchTask": "Compilar proyecto (javac)"
+        },
+        {
+            "type": "java",
+            "name": "13) precioDescuento",
+            "request": "launch",
+            "mainClass": "Tarea9_Ejercicio1.precioDescuento",
+            "preLaunchTask": "Compilar proyecto (javac)"
         }
     ]
 }

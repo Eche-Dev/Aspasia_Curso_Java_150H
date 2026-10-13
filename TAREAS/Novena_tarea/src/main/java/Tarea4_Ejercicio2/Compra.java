@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Tarea4_java;
+package Tarea4_Ejercicio2;
 
 /**
  * TAREA 4 - Precio con descuento e IVA (version con clase).
@@ -11,6 +11,8 @@ package Tarea4_java;
  * (nombre, cantidad y precio) en los atributos de la clase y cada calculo
  * se hace en su propio metodo. Asi el programa queda mas ordenado y la clase
  * se puede reutilizar desde cualquier otro sitio.
+ *
+ * Una comparacion detallada de las dos versiones esta en el archivo DIFERENCIAS.md.
  *
  * @author mañana
  */

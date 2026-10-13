@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package Tarea4_java;
+package Tarea4_Ejercicio1;
 
 /**
  * TAREA 4 - Precio con descuento e IVA (version sencilla, todo dentro del main).
