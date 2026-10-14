@@ -1,0 +1,101 @@
+/* ============================================================
+   KINDRED.JAVA - CSS DE LA PÁGINA DE JAVA (java.html)
+   Tarjetas con el nombre de la carpeta y el botón para abrir
+   el código del ejercicio.
+   ============================================================ */
+
+
+/* ============ REJILLA DE EJERCICIOS ============ */
+
+.java-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 tarjetas por fila en PC */
+    gap: 1.5rem;
+}
+
+
+/* ============ TARJETA DE EJERCICIO ============ */
+
+.java-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.java-card .java-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+/* Título de la tarjeta a la izquierda y badge a la derecha */
+.java-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.java-head h3 {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* Nombre de la carpeta del ejercicio (Dia3_Ejercicio1, Tarea4_Ejercicio3...) */
+.java-clase {
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--neon);
+    background: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.java-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 0.3rem;
+}
+
+.java-card .btn {
+    margin-top: auto;   /* el botón se queda pegado abajo en todas las tarjetas */
+    font-size: 0.75rem;
+}
+
+
+/* ============ AVISO / CONSEJO ============ */
+
+.java-aviso {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    border-left: 3px solid var(--gold);   /* barritas doradas a la izquierda */
+}
+
+.java-aviso strong { color: var(--gold); }
+
+.tecla {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-bottom-width: 3px;             /* imita el borde de abajo de un teclado */
+    border-radius: 5px;
+    padding: 0.1rem 0.45rem;
+    color: var(--neon);
+}
+
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 1000px) {
+    .java-grid {
+        grid-template-columns: 1fr;       /* tarjetas apiladas */
+    }
+}

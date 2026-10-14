@@ -106,6 +106,10 @@ $META_PRACTICAS = @{}
 $bloque = Leer-VariableJs $textoMeta "META_PRACTICAS"
 if ($bloque) { $META_PRACTICAS = $bloque | ConvertFrom-Json }
 
+$META_JAVA = @{}
+$bloque = Leer-VariableJs $textoMeta "META_JAVA"
+if ($bloque) { $META_JAVA = $bloque | ConvertFrom-Json }
+
 $META_NOTAS = @{}
 $bloque = Leer-VariableJs $textoMeta "META_NOTAS"
 if ($bloque) { $META_NOTAS = $bloque | ConvertFrom-Json }
@@ -229,10 +233,18 @@ $listaTareas = @()
 if (Test-Path -LiteralPath $carpetaTareas) {
 
     # 1) se agrupan los archivos .html, .pdf y .md por carpeta
+    # OJO: se saltan las carpetas de compilacion (target, bin) para que no
+    # salgan tarjetas fantasma con los .class o los .md que se copian alli.
+    # Tambien se salta DIFERENCIAS.md: ese documento ya no se muestra en la
+    # web (el indice de ejercicios hace su trabajo), pero el archivo sigue
+    # en el proyecto por si se quiere recuperar.
     $grupos = [ordered]@{}
 
     $archivos = Get-ChildItem -LiteralPath $carpetaTareas -Recurse -File |
-        Where-Object { $_.Extension -match '^\.(html|pdf|md)$' } |
+        Where-Object {
+            $_.Extension -match '^\.(html|pdf|md)$' -and
+            $_.FullName -notmatch '\\(target|bin|\.git|\.vscode)\\' -and
+            $_.Name -ne 'DIFERENCIAS.md' } |
         Sort-Object FullName
 
     foreach ($a in $archivos) {
@@ -488,16 +500,18 @@ $listaPracticas = @()
 
 if (Test-Path -LiteralPath $carpetaPracticas) {
     $archivos = Get-ChildItem -LiteralPath $carpetaPracticas -Recurse -File |
-        Where-Object { $_.Extension -match '^\.(html|css)$' } |
+        Where-Object { $_.Extension -match '^\.(html|css|py)$' } |
         Sort-Object FullName
 
     foreach ($a in $archivos) {
 
         $ruta = Get-RutaRelativa $a
         $esCss = ($a.Extension -eq ".css")
+        $esPy = ($a.Extension -eq ".py")
 
         # --- titulo ---
         if ($esCss) { $titulo = "Hoja de estilos: " + $a.Directory.Name }
+        elseif ($esPy) { $titulo = Get-TituloDesdeNombre $a.Name }
         else {
             $titulo = Get-TituloHtml $a.FullName
             if ($titulo -eq "") { $titulo = Get-TituloDesdeNombre $a.Name }
@@ -516,6 +530,7 @@ if (Test-Path -LiteralPath $carpetaPracticas) {
             if ($meta.badge) { $badge = $meta.badge }
         }
         if ($esCss) { $icono = "CSS" }
+        elseif ($esPy) { $icono = "PY" }
         elseif ($a.Extension -eq ".html" -and $a.Directory.Name -match "JS") { $icono = "JS" }
         else { $icono = "HTML" }
 
@@ -530,6 +545,108 @@ if (Test-Path -LiteralPath $carpetaPracticas) {
         }
         $listaPracticas += "    " + (Objeto $campos)
     }
+}
+
+
+# ---------- 2bis. EJERCICIOS DE JAVA (..\TAREAS\Novena_tarea) ----------
+# Cada archivo .java del proyecto es una tarjeta de la pagina java.html.
+# El proyecto se copia de vuelta al NetBeansProjects\PrimerVezEnJava.
+
+$carpetaJava = Join-Path $base "TAREAS\Novena_tarea\src\main\java"
+$listaJava = @()
+$datosJava = @()
+
+if (Test-Path -LiteralPath $carpetaJava) {
+
+    $archivos = Get-ChildItem -LiteralPath $carpetaJava -Recurse -File -Filter *.java |
+        Sort-Object FullName
+
+    foreach ($a in $archivos) {
+
+        $ruta = Get-RutaRelativa $a
+        $carpeta = $a.Directory.Name          # Dia1_Ejercicio1, Tarea4_Ejercicio3...
+
+        # --- titulo: el de meta.js o, si no, el nombre de la clase ---
+        $titulo = Get-TituloDesdeNombre $a.Name
+
+        # --- metadatos ---
+        $desc = "Ejercicio de Java de " + ($carpeta -replace '[-_]', ' ') + "."
+        $tags = @("Java")
+        $badge = "Hecho"
+
+        $meta = Get-Meta $META_JAVA $ruta
+        if ($meta) {
+            if ($meta.titulo) { $titulo = $meta.titulo }
+            if ($meta.desc) { $desc = $meta.desc }
+            if ($meta.tags) { $tags = $meta.tags }
+            if ($meta.badge) { $badge = $meta.badge }
+        }
+
+        $campos = [ordered]@{
+            carpeta = (Q ($carpeta -replace '[-_]', ' '))
+            ruta    = (Q $ruta)
+            href    = (Q (Get-Href $ruta))
+            titulo  = (Q $titulo)
+            desc    = (Q $desc)
+            tags    = $tags
+            badge   = (Q $badge)
+        }
+        $listaJava += "    " + (Objeto $campos)
+
+        # se guarda aparte, sin las comillas de JavaScript, para el resumen en Markdown
+        $datosJava += @{ carpeta = ($carpeta -replace '[-_]', ' '); ruta = $ruta; titulo = $titulo; desc = $desc }
+    }
+
+    # --- resumen en Markdown con los encabezados de todos los ejercicios ---
+    # El boton "Ver indice" de la Novena Tarea abre este archivo. Se escribe
+    # aqui para que se actualice solo: no hay que tocarlo nunca a mano.
+
+    $lineas = @()
+    $lineas += "================================================================"
+    $lineas += " RESUMEN DE LOS EJERCICIOS DE JAVA"
+    $lineas += "----------------------------------------------------------------"
+    $lineas += " Este archivo lo crea ACTUALIZAR.bat con los encabezados que"
+    $lineas += " tiene cada ejercicio. NO lo edites a mano: se reescribe solo."
+    $lineas += " Generado el " + (Get-Date -Format "dd/MM/yyyy HH:mm")
+    $lineas += "================================================================"
+    $lineas += ""
+    $lineas += " Hay $($datosJava.Count) ejercicios. Cada bloque es un ejercicio:"
+    $lineas += " primero su carpeta, luego su titulo y su descripcion, y al final"
+    $lineas += " los encabezados que lleva escritos el propio archivo .java."
+    $lineas += ""
+
+    foreach ($j in $datosJava) {
+
+        $lineas += "================================================================"
+        $lineas += " $($j.carpeta)"
+        $lineas += "================================================================"
+        $lineas += ""
+        $lineas += " $($j.titulo)"
+        $lineas += "   $($j.desc)"
+        $lineas += ""
+        $lineas += "   Archivo: $($j.ruta)"
+
+        # los encabezados reales del ejercicio (el /** ... */ de arriba del archivo)
+        $codigo = Get-Content -LiteralPath (Join-Path $base ($j.ruta -replace '/', '\')) -Raw -Encoding UTF8
+        $bloque = [regex]::Match($codigo, '(?s)/\*\*(.*?)\*/')
+        if ($bloque.Success) {
+            $cabeceras = @()
+            foreach ($linea in ($bloque.Groups[1].Value -split "`r?`n")) {
+                $limpia = ($linea -replace '^\s*\*+\s?', '').Trim()
+                if ($limpia -ne "" -and $limpia -notmatch '^@') { $cabeceras += $limpia }
+            }
+            if ($cabeceras.Count -gt 0) {
+                $lineas += "   Encabezados del ejercicio:"
+                foreach ($c in $cabeceras) { $lineas += "     * $c" }
+            }
+        }
+
+        $lineas += ""
+    }
+
+    $resumen = Join-Path $base "TAREAS\Novena_tarea\src\main\java\Tarea4_Ejercicio2\RESUMEN-JAVA.md"
+    [IO.File]::WriteAllText($resumen, (($lineas -join "`r`n") + "`r`n"), (New-Object System.Text.UTF8Encoding $true))
+    Write-Host "  indice    : RESUMEN-JAVA.md con los encabezados de $($datosJava.Count) ejercicios" -ForegroundColor DarkGray
 }
 
 
@@ -632,6 +749,11 @@ $L += "  practicas: ["
 $L += ($listaPracticas -join ",`r`n")
 $L += "  ],"
 $L += ""
+$L += "  /* Ejercicios de Java encontrados en ..\Java_Ejercicios */"
+$L += "  java: ["
+$L += ($listaJava -join ",`r`n")
+$L += "  ],"
+$L += ""
 $L += "  /* PDF de ..\Informacion_De_Clase, agrupados por carpeta */"
 $L += "  recursos: {"
 $L += "    html:   [" + ($grupos.html -join ", ") + "],"
@@ -657,6 +779,7 @@ $L += "/* Numeros que se ven en la portada (se cuentan solos) */"
 $L += "DATOS.resumenes = {"
 $L += "  tareas: " + $listaTareas.Count + ","
 $L += "  practicas: " + $listaPracticas.Count + ","
+$L += "  java: " + $listaJava.Count + ","
 $L += "  pdf: " + $totalRecursos + ","
 $L += "  notas: " + $listaNotas.Count + ","
 $L += "  fotos: " + $listaFotos.Count + ","
@@ -672,6 +795,7 @@ $texto = $L -join "`r`n"
 Write-Host ""
 Write-Host "  TAREAS    : $($listaTareas.Count) trabajos" -ForegroundColor Green
 Write-Host "  PRACTICAS : $($listaPracticas.Count) archivos" -ForegroundColor Green
+Write-Host "  JAVA      : $($listaJava.Count) ejercicios" -ForegroundColor Green
 Write-Host "  PDF       : $totalRecursos" -ForegroundColor Green
 Write-Host "  NOTAS .md : $($listaNotas.Count)" -ForegroundColor Green
 Write-Host "  FOTOS     : $($listaFotos.Count)" -ForegroundColor Green

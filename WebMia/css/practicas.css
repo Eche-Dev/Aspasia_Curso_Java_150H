@@ -49,6 +49,12 @@
     border-color: rgba(21, 114, 182, 0.5);
 }
 
+.practica-icon-py {
+    background: rgba(55, 118, 171, 0.18); /* fondo azul Python */
+    color: #ffd43b;                       /* y su texto amarillo */
+    border-color: rgba(255, 212, 59, 0.45);
+}
+
 /* Cuerpo de la tarjeta */
 .practica-body { flex: 1; }    /* ocupa el espacio que sobra */
 

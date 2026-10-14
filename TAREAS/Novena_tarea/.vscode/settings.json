@@ -10,5 +10,15 @@
     "java.project.outputPath": "bin",
     "java.autobuild.enabled": true,
     "java.compile.nullAnalysis.mode": "disabled",
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+
+    "java.jdt.ls.java.home": "${env:JAVA_HOME}",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-25",
+            "path": "${env:JAVA_HOME}",
+            "default": true
+        }
+    ],
+    "java.debug.settings.console": "integratedTerminal"
 }

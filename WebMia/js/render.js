@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pintarPortada();
     pintarTareas();
     pintarPracticas();
+    pintarJava();
     pintarClase();
 
     /* Avisamos a los efectos de main.js de que hay elementos nuevos
@@ -78,6 +79,7 @@ function pintarPortada() {
     var numeros = {
         tareas: DATOS.resumenes.tareas,
         practicas: DATOS.resumenes.practicas,
+        java: DATOS.resumenes.java,
         recursos: DATOS.resumenes.recursos
     };
 
@@ -96,6 +98,7 @@ function pintarPortada() {
     var filas = [
         { num: DATOS.resumenes.tareas, txt: 'trabajos de clase guardados' },
         { num: DATOS.resumenes.practicas, txt: 'prácticas manuales en casa' },
+        { num: DATOS.resumenes.java, txt: 'ejercicios de Java' },
         { num: DATOS.resumenes.pdf, txt: 'PDF y cheatsheets descargados' },
         { num: DATOS.resumenes.notas + DATOS.resumenes.fotos, txt: 'notas y fotos de clase' }
     ];
@@ -179,15 +182,16 @@ function pintarPracticas() {
     for (var i = 0; i < DATOS.practicas.length; i++) {
         var p = DATOS.practicas[i];
 
-        /* icono grande: HTML, JS o CSS (cada uno con su color) */
+        /* icono grande: HTML, JS, CSS o PY (cada uno con su color) */
         var icono = '<div class="practica-icon';
         var dibujo = '&lt;/&gt;';
         if (p.icono === 'JS') { icono += ' practica-icon-js'; dibujo = 'JS'; }
         else if (p.icono === 'CSS') { icono += ' practica-icon-css'; dibujo = '#'; }
+        else if (p.icono === 'PY') { icono += ' practica-icon-py'; dibujo = 'PY'; }
         icono += '">' + dibujo + '</div>';
 
-        /* el CSS se abre para ver el código, el HTML para verla */
-        var textoBoton = (p.icono === 'CSS') ? 'Ver código' : 'Ver práctica';
+        /* el CSS y el Python se abren para ver el código, el HTML para verla */
+        var textoBoton = (p.icono === 'CSS' || p.icono === 'PY') ? 'Ver código' : 'Ver práctica';
 
         html += '<article class="glass-card practica-card reveal">'
               + '    ' + icono
@@ -198,12 +202,50 @@ function pintarPracticas() {
               + '        </div>'
               + '        <p>' + p.desc + '</p>'
               + verTags(p.tags)
-              + '        <a class="btn ' + (p.icono === 'CSS' ? 'btn-secondary' : 'btn-primary') + '" href="' + p.href + '">' + textoBoton + '</a>'
+              + '        <a class="btn ' + (p.icono === 'HTML' || p.icono === 'JS' ? 'btn-primary' : 'btn-secondary') + '" href="' + p.href + '">' + textoBoton + '</a>'
               + '    </div>'
               + '</article>';
     }
 
     contenedor.innerHTML = html;
+}
+
+
+/* ============ TARJETAS DE JAVA (java.html) ============ */
+/* Una tarjeta por cada .java de ..\Java_Ejercicios */
+
+function pintarJava() {
+
+    var contenedor = caja('lista-java');
+    if (!contenedor || !DATOS.java) { return; }
+
+    var html = '';
+
+    for (var i = 0; i < DATOS.java.length; i++) {
+        var j = DATOS.java[i];
+
+html += '<article class="glass-card java-card reveal">'
+              + '    <div class="java-card-body">'
+              + '        <div class="java-head">'
+              + '            <h3>' + j.titulo + '</h3>'
+              + '            <span class="' + claseBadge(j.badge) + '">' + j.badge + '</span>'
+              + '        </div>'
+              + '        <span class="java-clase">' + j.carpeta + '</span>'
+              + '        <p>' + j.desc + '</p>'
+              + verTags(j.tags)
+              + '        <a class="btn btn-primary" href="' + j.href + '"'
+              + '           title="' + j.ruta + '">Ver código</a>'
+              + '    </div>'
+              + '</article>';
+    }
+
+    contenedor.innerHTML = html;
+
+    /* el badge de la cabecera de la página también se actualiza */
+    var badge = caja('badge-java');
+    if (badge) {
+        badge.textContent = DATOS.java.length + ' ejercicios guardados';
+    }
 }
 
 

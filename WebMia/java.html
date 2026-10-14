@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- documento HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña -->
+    <title>Kindred.Java | Java</title>
+
+    <!-- tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido + CSS de esta página -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/java.css">
+
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}.aviso-js{display:block !important}</style></noscript>
+</head>
+
+<body>
+
+    <!-- elementos de los efectos -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <div class="logo" data-text="Kindred.Java">Kindred.Java</div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="java.html" class="active">Java</a>
+            <!-- esta es la página actual: enlace activo -->
+            <a href="clase.html">Clase</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="practicas.html">Prácticas</a>
+        <a href="java.html" class="active">Java</a>
+        <a href="clase.html">Clase</a>
+    </div>
+
+    <main>
+    <!-- Aviso que solo se ve si el navegador tiene JavaScript desactivado -->
+    <p class="aviso-js">Activa JavaScript en tu navegador para ver las tarjetas de trabajos.</p>
+
+        <!-- ============ CABECERA DE LA PÁGINA ============ -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-badge badge badge-neon" id="badge-java">Ejercicios de Java</span>
+                <h1 class="page-title">Mis <span class="accent">ejercicios</span> de Java</h1>
+                <p class="page-sub">
+                    Todos los ejercicios del curso de Java: variables, clases, Scanner,
+                    condicionales y arrays. Cada tarjeta abre el código del ejercicio.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ REJILLA DE EJERCICIOS ============ -->
+        <section class="section">
+            <div class="container">
+
+                <!-- Las tarjetas las pinta js\render.js con los datos de js\datos.js.
+                     Cada .java que haya en ..\Java_Ejercicios aparece como una tarjeta,
+                     sin tocar este archivo. -->
+                <div class="java-grid" id="lista-java"></div>
+
+                <!-- ---- AVISO ---- -->
+                <div class="java-aviso glass-card reveal">
+                    <strong>Cómo abrirlos:</strong> al pinchar en <em>Ver código</em> se abre el
+                    archivo <span class="tecla">.java</span> en el navegador. Para ejecutarlo,
+                    ábrelo en <strong>Visual Studio Code</strong> y pulsa <span class="tecla">F5</span>
+                    (o el botón <em>Run</em> de la parte de arriba a la derecha).
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-logo">KINDRED.JAVA</div>
+        <p>Web personal de prácticas y apuntes de clase</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="java.html">Java</a>
+            <a href="clase.html">Clase</a>
+        </div>
+        <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <!-- 1. datos.js: los datos que genera ACTUALIZAR.bat (NO se edita a mano) -->
+    <script src="js/datos.js"></script>
+
+    <!-- 2. render.js: pinta las tarjetas usando esos datos -->
+    <script src="js/render.js"></script>
+
+    <!-- 3. main.js: los efectos (contadores, animaciones, cursor, estrellas) -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

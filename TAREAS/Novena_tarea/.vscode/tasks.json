@@ -8,12 +8,14 @@
             "args": [
                 "-NoProfile",
                 "-Command",
-                "$files = Get-ChildItem -Recurse -Filter *.java '${workspaceFolder}/src/main/java' | ForEach-Object { $_.FullName }; & '${env:JAVA_HOME}/bin/javac.exe' -encoding UTF-8 -d '${workspaceFolder}/bin' $files",
-                "if ($LASTEXITCODE -eq 0) { Write-Host 'Compilacion correcta' }"
+                "$files = Get-ChildItem -Recurse -Filter *.java '${workspaceFolder}/src/main/java' | ForEach-Object { $_.FullName }; & '${env:JAVA_HOME}/bin/javac.exe' -encoding UTF-8 -d '${workspaceFolder}/bin' $files; if ($LASTEXITCODE -eq 0) { Write-Host 'Compilacion correcta' }"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": "$javac"
         },
@@ -24,9 +26,12 @@
             "args": [
                 "-NoProfile",
                 "-Command",
-                "& '${env:JAVA_HOME}/bin/java.exe' -cp '${workspaceFolder}/bin' '${fileDirname}/${fileBasenameNoExtension}'"
+                "$paquete = ('${relativeFileDirname}' -replace '\\\\', '.') -replace '^src\\.main\\.java\\.', ''; & '${env:JAVA_HOME}/bin/java.exe' -cp '${workspaceFolder}/bin' ($paquete + '.${fileBasenameNoExtension}')"
             ],
             "dependsOn": "Compilar proyecto (javac)",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         }
     ]

@@ -8,7 +8,7 @@
    y vuelve a ejecutar ACTUALIZAR.bat.
 
    Se ha generado con:
-   07/10/2026 13:14
+   14/10/2026 12:50
    ============================================================ */
 
 var DATOS = {
@@ -95,6 +95,15 @@ var DATOS = {
       badge: "Completada",
       botones: [["../TAREAS/Septima_tarea/Selector_de_color.html", "Abrir selector"]],
       enunciados: [["../TAREAS/Septima_tarea/enunciado.md", "Enunciado", "enunciado.md"]]
+    },
+        {
+      entrega: "Novena Tarea - Java",
+      titulo: "Índice de ejercicios de Java",
+      desc: "Resumen de todos los ejercicios de Java del proyecto: cada uno con su carpeta, su descripción y los encabezados que lleva escritos en su propio archivo.",
+      tags: ["Java"],
+      badge: "Completada",
+      botones: [],
+      enunciados: [["../TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio2/RESUMEN-JAVA.md", "Ver índice de ejercicios", "RESUMEN-JAVA.md"]]
     }
   ],
 
@@ -126,6 +135,190 @@ var DATOS = {
       tags: ["JS"],
       badge: "Abierta",
       icono: "JS"
+    },
+        {
+      ruta: "Practicas_Manuales_De_La_Tareas/Py-Practice/calculadora.py",
+      href: "../Practicas_Manuales_De_La_Tareas/Py-Practice/calculadora.py",
+      titulo: "Calculadora",
+      desc: "Calculadora en Python: pide el nombre, el precio y la cantidad de un producto, calcula el coste total y aplica un 10 % de descuento con if / else si el total llega a 100 € o más.",
+      tags: ["Python"],
+      badge: "Código",
+      icono: "PY"
+    },
+        {
+      ruta: "Practicas_Manuales_De_La_Tareas/Py-Practice/temp.py",
+      href: "../Practicas_Manuales_De_La_Tareas/Py-Practice/temp.py",
+      titulo: "Temp",
+      desc: "Pede la temperatura de los 7 días y calcula la más alta, la más baja y la promedio con max, min y las f-strings de Python.",
+      tags: ["Python"],
+      badge: "Código",
+      icono: "PY"
+    }
+  ],
+
+  /* Ejercicios de Java encontrados en ..\Java_Ejercicios */
+  java: [
+        {
+      carpeta: "Dia1 Ejercicio1",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio1/Ej1.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio1/Ej1.java",
+      titulo: "Variables y tipos de datos",
+      desc: "Declara una variable de cada tipo básico (String, double, int y boolean) y las muestra por pantalla.",
+      tags: ["Java"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia1 Ejercicio2",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio2/PProducto.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio2/PProducto.java",
+      titulo: "Datos de un producto",
+      desc: "Muestra una ficha con el nombre, el precio, las unidades disponibles y si el producto está en oferta.",
+      tags: ["Java"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia1 Ejercicio3",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio3/YoSolito.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio3/YoSolito.java",
+      titulo: "Ficha personal",
+      desc: "Presenta mis datos personales: país, ciudad, edad, cumpleaños, dirección y estudios.",
+      tags: ["Java"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia1 Ejercicio4",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio4/Alumno.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio4/Alumno.java",
+      titulo: "Clase Alumno",
+      desc: "Primera clase con atributos y métodos: crea la ficha de un alumno (nombre, nota, faltas) y dice si ha aprobado.",
+      tags: ["Java", "POO"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia1 Ejercicio5",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio5/PAlumno.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio5/PAlumno.java",
+      titulo: "Probando la clase Alumno",
+      desc: "Crea un objeto de la clase Alumno con datos de prueba e imprime su ficha completa por pantalla.",
+      tags: ["Java", "POO"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia1 Ejercicio6",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio6/Variables.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio6/Variables.java",
+      titulo: "Atributos y setters",
+      desc: "Guarda los puntos iniciales en un atributo de la clase yPractica el getter y el setter para leerlo y cambiarlo.",
+      tags: ["Java", "POO"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia1 Ejercicio7",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio7/VariableRun.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio7/VariableRun.java",
+      titulo: "Puntos iniciales",
+      desc: "Crea un objeto con 10 puntos de valor inicial y muestra su número y su texto.",
+      tags: ["Java", "POO"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia2 Ejercicio1",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio1/AngelEjercicio.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio1/AngelEjercicio.java",
+      titulo: "Datos con Scanner",
+      desc: "Pide por teclado el nombre, la edad y la altura y muestra después una ficha con los tres datos.",
+      tags: ["Java", "Scanner"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia2 Ejercicio2",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio2/PercioConDescuentos.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio2/PercioConDescuentos.java",
+      titulo: "Precio con descuentos",
+      desc: "Calcula el precio final de una compra aplicando un 10 % de descuento y después un 21 % de IVA.",
+      tags: ["Java"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia2 Ejercicio3",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio3/AngelEjercios2.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio3/AngelEjercios2.java",
+      titulo: "Triángulo completo",
+      desc: "Pide la base y la altura por teclado y calcula el área, la hipotenusa y el perímetro del triángulo.",
+      tags: ["Java", "Scanner"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia3 Ejercicio1",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia3_Ejercicio1/AreaTriangulo.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia3_Ejercicio1/AreaTriangulo.java",
+      titulo: "Área de un triángulo",
+      desc: "Pide la base y la altura por teclado y muestra el área del triángulo (base x altura / 2).",
+      tags: ["Java", "Scanner"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Dia3 Ejercicio2",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Dia3_Ejercicio2/Calculadora.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Dia3_Ejercicio2/Calculadora.java",
+      titulo: "Calculadora de la compra",
+      desc: "Calcula el importe de una compra y le aplica un 10 % de descuento solo si supera los 100 €, más un 21 % de IVA.",
+      tags: ["Java", "Condicionales"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Tarea4 Ejercicio1",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio1/PrecioConDescuentoEIVA.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio1/PrecioConDescuentoEIVA.java",
+      titulo: "Precio con descuento e IVA",
+      desc: "Versión sencilla (todo dentro del main) del precio final de 3 zapatillas con un 10 % de descuento y un 21 % de IVA.",
+      tags: ["Java", "Tarea"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Tarea4 Ejercicio2",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio2/Compra.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio2/Compra.java",
+      titulo: "Clase Compra",
+      desc: "El mismo cálculo del precio final pero con los datos guardados en los atributos de una clase y cada cálculo en su método.",
+      tags: ["Java", "POO", "Tarea"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Tarea4 Ejercicio3",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TemperaturaSemanales.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TemperaturaSemanales.java",
+      titulo: "Temperaturas de la semana (con clase)",
+      desc: "Guarda las 7 temperaturas en un array y calcula en métodos aparte la suma, la media, la máxima, la mínima y los días por encima de la media.",
+      tags: ["Java", "Arrays", "Tarea"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Tarea4 Ejercicio3",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanales2.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanales2.java",
+      titulo: "Temperaturas de la semana (sencillo)",
+      desc: "El mismo ejercicio con las temperaturas escritas a mano y todo el cálculo dentro del main, sin clases ni métodos.",
+      tags: ["Java", "Arrays", "Tarea"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Tarea4 Ejercicio3",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanalesTeclado.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanalesTeclado.java",
+      titulo: "Temperaturas de la semana (por teclado)",
+      desc: "El mismo ejercicio pero el programa pregunta la temperatura de cada día con un Scanner y la guarda en un array.",
+      tags: ["Java", "Arrays", "Scanner", "Tarea"],
+      badge: "Hecho"
+    },
+        {
+      carpeta: "Tarea9 Ejercicio1",
+      ruta: "TAREAS/Novena_tarea/src/main/java/Tarea9_Ejercicio1/precioDescuento.java",
+      href: "../TAREAS/Novena_tarea/src/main/java/Tarea9_Ejercicio1/precioDescuento.java",
+      titulo: "Precio con descuento e IVA (Tarea 9)",
+      desc: "Tercera versión del ejercicio del precio final: 5 productos de 50 € con un 10 % de descuento y un 21 % de IVA, con los porcentajes como variables.",
+      tags: ["Java", "Tarea"],
+      badge: "Hecho"
     }
   ],
 
@@ -135,7 +328,7 @@ var DATOS = {
     css:    [["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css3-cheatsheet-lite.pdf", "CSS3 cheatsheet lite"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css-cheatsheet-2026.pdf", "CSS cheatsheet 2026"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/box-sizing-border-box-explicacion.pdf", "box-sizing: border-box"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/propiedadesbordersmarginspaddings.pdf", "Borders, margins y paddings"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/unidades-css-px-rem-vh.pdf", "Unidades: px, rem y vh"]],
     manual: [["../Informacion_De_Clase/HTML_Y_CSS-Informacion/MANUAL-HTML-Y-CSS.pdf", "Manual HTML y CSS (juntos)"]],
     vscode: [["../Informacion_De_Clase/VsCODE-Informacion/Extensiones-esenciales-para-Visual-Studio-Code.pdf", "Extensiones esenciales"], ["../Informacion_De_Clase/VsCODE-Informacion/HTML%20y%20CSS_El%20editor%20Visual%20Studio%20Code.pdf", "El editor Visual Studio Code"], ["../Informacion_De_Clase/VsCODE-Informacion/Navegadores%20principales.pdf", "Navegadores principales"]],
-    java:   [["../Informacion_De_Clase/TEORIA%20JAVA/1-sintaxis-java.pdf", "Sintaxis Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/2-presentacion_variables_operadores_java_25_paginas.pdf", "Variables y operadores"], ["../Informacion_De_Clase/TEORIA%20JAVA/3-presentacion_condicionales_validacion_java_25_paginas_v2.pdf", "Condicionales y validación"], ["../Informacion_De_Clase/TEORIA%20JAVA/4-bucles_depuracion_java_25_paginas_v2.pdf", "Bucles y depuración"], ["../Informacion_De_Clase/TEORIA%20JAVA/5-presentacion_metodos_descomposicion_java_25_paginas.pdf", "Métodos y descomposición"], ["../Informacion_De_Clase/TEORIA%20JAVA/6-presentacion_arrays_colecciones_java_25_paginas_ampliada.pdf", "Arrays y colecciones"], ["../Informacion_De_Clase/TEORIA%20JAVA/7-presentacion_poo_java_35_paginas_ampliada.pdf", "Programación orientada a objetos"], ["../Informacion_De_Clase/TEORIA%20JAVA/Bloque1_Introduccion_a_Java.pdf", "Introducción a Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/empezando.pdf", "Empezando con Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/Guia_Java_Terminal_VSCode.pdf", "Guía Java, Terminal y VS Code"], ["../Informacion_De_Clase/TEORIA%20JAVA/instalacion_jdk_java.pdf", "Instalación del JDK"]]
+    java:   [["../Informacion_De_Clase/TEORIA%20JAVA/1-sintaxis-java.pdf", "Sintaxis Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/2-presentacion_variables_operadores_java_25_paginas.pdf", "Variables y operadores"], ["../Informacion_De_Clase/TEORIA%20JAVA/3-presentacion_condicionales_validacion_java_25_paginas_v2.pdf", "Condicionales y validación"], ["../Informacion_De_Clase/TEORIA%20JAVA/4-bucles_depuracion_java_25_paginas_v2.pdf", "Bucles y depuración"], ["../Informacion_De_Clase/TEORIA%20JAVA/5-presentacion_metodos_descomposicion_java_25_paginas.pdf", "Métodos y descomposición"], ["../Informacion_De_Clase/TEORIA%20JAVA/6-presentacion_arrays_colecciones_java_25_paginas_ampliada.pdf", "Arrays y colecciones"], ["../Informacion_De_Clase/TEORIA%20JAVA/7-presentacion_poo_java_35_paginas_ampliada.pdf", "Programación orientada a objetos"], ["../Informacion_De_Clase/TEORIA%20JAVA/Bloque1_Introduccion_a_Java.pdf", "Introducción a Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/empezando.pdf", "Empezando con Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/Guia_Java_Terminal_VSCode.pdf", "Guía Java, Terminal y VS Code"], ["../Informacion_De_Clase/TEORIA%20JAVA/instalacion_jdk_java.pdf", "Instalación del JDK"], ["../Informacion_De_Clase/TEORIA%20JAVA/Pildora_teorica_Scanner_Java.pdf", "Píldora teórica: Scanner en Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/Rutas_Terminal_Java_VSCode.pdf", "Rutas y terminal en Java con VS Code"]]
   },
 
   /* Notas y analisis (.md). Formato: [ruta, titulo, desc, extension] */
@@ -171,10 +364,11 @@ var DATOS = {
 
 /* Numeros que se ven en la portada (se cuentan solos) */
 DATOS.resumenes = {
-  tareas: 9,
-  practicas: 3,
-  pdf: 26,
+  tareas: 10,
+  practicas: 5,
+  java: 18,
+  pdf: 28,
   notas: 3,
   fotos: 3,
-  recursos: 32
+  recursos: 34
 };

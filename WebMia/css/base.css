@@ -431,6 +431,14 @@ main {
 .tag-html { background: rgba(227, 79, 38, 0.12); color: #e44f26; border-color: rgba(227, 79, 38, 0.5); }
 .tag-css  { background: rgba(21, 114, 182, 0.12); color: #4fa3ff; border-color: rgba(21, 114, 182, 0.5); }
 .tag-js   { background: rgba(240, 219, 79, 0.12); color: #f0db4f; border-color: rgba(240, 219, 79, 0.5); }
+.tag-java { background: rgba(168, 85, 247, 0.12); color: var(--purple); border-color: rgba(168, 85, 247, 0.5); }
+.tag-python { background: rgba(55, 118, 171, 0.15); color: #ffd43b; border-color: rgba(255, 212, 59, 0.45); }
+/* etiquetas de los ejercicios de Java: usan el color de la web */
+.tag-poo,
+.tag-arrays,
+.tag-scanner,
+.tag-condicionales,
+.tag-tarea { background: rgba(0, 240, 255, 0.08); color: var(--neon); border-color: rgba(0, 240, 255, 0.35); }
 
 
 /* ============ BARRAS DE PROGRESO ============ */
