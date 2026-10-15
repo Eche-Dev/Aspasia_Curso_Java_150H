@@ -548,11 +548,11 @@ if (Test-Path -LiteralPath $carpetaPracticas) {
 }
 
 
-# ---------- 2bis. EJERCICIOS DE JAVA (..\TAREAS\Novena_tarea) ----------
+# ---------- 2bis. EJERCICIOS DE JAVA (workspace Libreria_HTML_CSS\Novena_tarea) ----------
 # Cada archivo .java del proyecto es una tarjeta de la pagina java.html.
-# El proyecto se copia de vuelta al NetBeansProjects\PrimerVezEnJava.
+# El proyecto vive ahora dentro del workspace: Libreria_HTML_CSS\Novena_tarea
 
-$carpetaJava = Join-Path $base "TAREAS\Novena_tarea\src\main\java"
+$carpetaJava = "C:\Users\mañana\Documents\GitHub\Libreria_HTML_CSS\Novena_tarea\src\main\java"
 $listaJava = @()
 $datosJava = @()
 
@@ -563,7 +563,8 @@ if (Test-Path -LiteralPath $carpetaJava) {
 
     foreach ($a in $archivos) {
 
-        $ruta = Get-RutaRelativa $a
+        $rutaCompleta = $a.FullName.Substring($carpetaJava.Length + 1) -replace '\\', '/'
+        $ruta = "Libreria_HTML_CSS/Novena_tarea/$rutaCompleta"
         $carpeta = $a.Directory.Name          # Dia1_Ejercicio1, Tarea4_Ejercicio3...
 
         # --- titulo: el de meta.js o, si no, el nombre de la clase ---
@@ -582,10 +583,13 @@ if (Test-Path -LiteralPath $carpetaJava) {
             if ($meta.badge) { $badge = $meta.badge }
         }
 
+        $rutaCompleta = $ruta.Substring("Libreria_HTML_CSS/".Length)
+        $href = "../Libreria_HTML_CSS/$rutaCompleta"
+
         $campos = [ordered]@{
             carpeta = (Q ($carpeta -replace '[-_]', ' '))
             ruta    = (Q $ruta)
-            href    = (Q (Get-Href $ruta))
+            href    = (Q $href)
             titulo  = (Q $titulo)
             desc    = (Q $desc)
             tags    = $tags
@@ -594,7 +598,7 @@ if (Test-Path -LiteralPath $carpetaJava) {
         $listaJava += "    " + (Objeto $campos)
 
         # se guarda aparte, sin las comillas de JavaScript, para el resumen en Markdown
-        $datosJava += @{ carpeta = ($carpeta -replace '[-_]', ' '); ruta = $ruta; titulo = $titulo; desc = $desc }
+        $datosJava += @{ carpeta = ($carpeta -replace '[-_]', ' '); ruta = $rutaCompleta; titulo = $titulo; desc = $desc }
     }
 
     # --- resumen en Markdown con los encabezados de todos los ejercicios ---
@@ -627,7 +631,8 @@ if (Test-Path -LiteralPath $carpetaJava) {
         $lineas += "   Archivo: $($j.ruta)"
 
         # los encabezados reales del ejercicio (el /** ... */ de arriba del archivo)
-        $codigo = Get-Content -LiteralPath (Join-Path $base ($j.ruta -replace '/', '\')) -Raw -Encoding UTF8
+        $rutaCompleta = Join-Path $carpetaJava ($j.ruta -replace '/', '\')
+        $codigo = Get-Content -LiteralPath $rutaCompleta -Raw -Encoding UTF8
         $bloque = [regex]::Match($codigo, '(?s)/\*\*(.*?)\*/')
         if ($bloque.Success) {
             $cabeceras = @()
@@ -644,7 +649,9 @@ if (Test-Path -LiteralPath $carpetaJava) {
         $lineas += ""
     }
 
-    $resumen = Join-Path $base "TAREAS\Novena_tarea\src\main\java\Tarea4_Ejercicio2\RESUMEN-JAVA.md"
+    $dirResumen = "C:\Users\mañana\Documents\GitHub\Libreria_HTML_CSS\Novena_tarea\src\main\java\Modulo2\Tarea4_Ejercicio2"
+    if (-not (Test-Path -LiteralPath $dirResumen)) { New-Item -ItemType Directory -Path $dirResumen -Force | Out-Null }
+    $resumen = Join-Path $dirResumen "RESUMEN-JAVA.md"
     [IO.File]::WriteAllText($resumen, (($lineas -join "`r`n") + "`r`n"), (New-Object System.Text.UTF8Encoding $true))
     Write-Host "  indice    : RESUMEN-JAVA.md con los encabezados de $($datosJava.Count) ejercicios" -ForegroundColor DarkGray
 }

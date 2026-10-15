@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package Tarea9_Ejercicio1;
+package Modulo2.Tarea4_Ejercicio1;
 
 /**
  * TERCER DIA - Precio con descuento e IVA.

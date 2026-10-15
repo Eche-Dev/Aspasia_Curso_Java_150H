@@ -3,7 +3,7 @@
     "[java]": {
         "editor.defaultFormatter": "redhat.java"
     },
-    "java.import.maven.enabled": false,
+    "java.import.maven.enabled": true,
     "java.project.sourcePaths": [
         "src/main/java"
     ],
