@@ -146,7 +146,7 @@ var META_TAREAS = {
         "tags": ["Java"],
         "badge": "Completada",
         "grupos": {
-            "src/main/java/Tarea4_Ejercicio2": {
+            "src/main/java/Modulo2/Tarea4_Ejercicio2": {
 "titulo": "Índice de ejercicios de Java",
         "desc": "Resumen de todos los ejercicios de Java del proyecto: cada uno con su carpeta, su descripción y los encabezados que lleva escritos en su propio archivo.",
                 "enunciados": {
@@ -220,7 +220,7 @@ var META_PRACTICAS = {
 // ---- EJERCICIOS DE JAVA (dentro de ..\Java_Ejercicios) ----
 //
 // Son los ejercicios del proyecto de Java. La clave es la ruta del .java
-// con "/" en vez de "\" (ejemplo: "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanales2.java").
+// con "/" en vez de "\" (ejemplo: "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanales2.java").
 //
 //   "desc"  = la descripción de la tarjeta
 //   "titulo" = el nombre que se muestra (si no, sale el de la clase)
@@ -231,49 +231,49 @@ var META_PRACTICAS = {
 var META_JAVA = {
 
     // ---- Día 1: variables, tipos de datos y clases ----
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio1/Ej1.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio1/Ej1.java": {
         "titulo": "Variables y tipos de datos",
         "desc": "Declara una variable de cada tipo básico (String, double, int y boolean) y las muestra por pantalla.",
         "tags": ["Java"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio2/PProducto.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio2/PProducto.java": {
         "titulo": "Datos de un producto",
         "desc": "Muestra una ficha con el nombre, el precio, las unidades disponibles y si el producto está en oferta.",
         "tags": ["Java"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio3/YoSolito.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio3/YoSolito.java": {
         "titulo": "Ficha personal",
         "desc": "Presenta mis datos personales: país, ciudad, edad, cumpleaños, dirección y estudios.",
         "tags": ["Java"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio4/Alumno.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio4/Alumno.java": {
         "titulo": "Clase Alumno",
         "desc": "Primera clase con atributos y métodos: crea la ficha de un alumno (nombre, nota, faltas) y dice si ha aprobado.",
         "tags": ["Java", "POO"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio5/PAlumno.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio5/PAlumno.java": {
         "titulo": "Probando la clase Alumno",
         "desc": "Crea un objeto de la clase Alumno con datos de prueba e imprime su ficha completa por pantalla.",
         "tags": ["Java", "POO"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio6/Variables.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio6/Variables.java": {
         "titulo": "Atributos y setters",
         "desc": "Guarda los puntos iniciales en un atributo de la clase yPractica el getter y el setter para leerlo y cambiarlo.",
         "tags": ["Java", "POO"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia1_Ejercicio7/VariableRun.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio7/VariableRun.java": {
         "titulo": "Puntos iniciales",
         "desc": "Crea un objeto con 10 puntos de valor inicial y muestra su número y su texto.",
         "tags": ["Java", "POO"],
@@ -281,21 +281,21 @@ var META_JAVA = {
     },
 
     // ---- Día 2: entrada por teclado y operadores ----
-    "TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio1/AngelEjercicio.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia2_Ejercicio1/AngelEjercicio.java": {
         "titulo": "Datos con Scanner",
         "desc": "Pide por teclado el nombre, la edad y la altura y muestra después una ficha con los tres datos.",
         "tags": ["Java", "Scanner"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio2/PercioConDescuentos.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia2_Ejercicio2/PercioConDescuentos.java": {
         "titulo": "Precio con descuentos",
         "desc": "Calcula el precio final de una compra aplicando un 10 % de descuento y después un 21 % de IVA.",
         "tags": ["Java"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia2_Ejercicio3/AngelEjercios2.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia2_Ejercicio3/AngelEjercios2.java": {
         "titulo": "Triángulo completo",
         "desc": "Pide la base y la altura por teclado y calcula el área, la hipotenusa y el perímetro del triángulo.",
         "tags": ["Java", "Scanner"],
@@ -303,14 +303,14 @@ var META_JAVA = {
     },
 
     // ---- Día 3: condicionales ----
-    "TAREAS/Novena_tarea/src/main/java/Dia3_Ejercicio1/AreaTriangulo.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia3_Ejercicio1/AreaTriangulo.java": {
         "titulo": "Área de un triángulo",
         "desc": "Pide la base y la altura por teclado y muestra el área del triángulo (base x altura / 2).",
         "tags": ["Java", "Scanner"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Dia3_Ejercicio2/Calculadora.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo1/Dia3_Ejercicio2/Calculadora.java": {
         "titulo": "Calculadora de la compra",
         "desc": "Calcula el importe de una compra y le aplica un 10 % de descuento solo si supera los 100 €, más un 21 % de IVA.",
         "tags": ["Java", "Condicionales"],
@@ -318,44 +318,109 @@ var META_JAVA = {
     },
 
     // ---- Tarea 4: métodos, clases y arrays ----
-    "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio1/PrecioConDescuentoEIVA.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio1/PrecioConDescuentoEIVA.java": {
         "titulo": "Precio con descuento e IVA",
         "desc": "Versión sencilla (todo dentro del main) del precio final de 3 zapatillas con un 10 % de descuento y un 21 % de IVA.",
         "tags": ["Java", "Tarea"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio2/Compra.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio2/Compra.java": {
         "titulo": "Clase Compra",
         "desc": "El mismo cálculo del precio final pero con los datos guardados en los atributos de una clase y cada cálculo en su método.",
         "tags": ["Java", "POO", "Tarea"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TemperaturaSemanales.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TemperaturaSemanales.java": {
         "titulo": "Temperaturas de la semana (con clase)",
         "desc": "Guarda las 7 temperaturas en un array y calcula en métodos aparte la suma, la media, la máxima, la mínima y los días por encima de la media.",
         "tags": ["Java", "Arrays", "Tarea"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanales2.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanales2.java": {
         "titulo": "Temperaturas de la semana (sencillo)",
         "desc": "El mismo ejercicio con las temperaturas escritas a mano y todo el cálculo dentro del main, sin clases ni métodos.",
         "tags": ["Java", "Arrays", "Tarea"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Tarea4_Ejercicio3/TempSemanalesTeclado.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanalesTeclado.java": {
         "titulo": "Temperaturas de la semana (por teclado)",
         "desc": "El mismo ejercicio pero el programa pregunta la temperatura de cada día con un Scanner y la guarda en un array.",
         "tags": ["Java", "Arrays", "Scanner", "Tarea"],
         "badge": "Hecho"
     },
 
-    "TAREAS/Novena_tarea/src/main/java/Tarea9_Ejercicio1/precioDescuento.java": {
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio1/precioDescuento.java": {
         "titulo": "Precio con descuento e IVA (Tarea 9)",
         "desc": "Tercera versión del ejercicio del precio final: 5 productos de 50 € con un 10 % de descuento y un 21 % de IVA, con los porcentajes como variables.",
+        "tags": ["Java", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    // ---- Tarea 5: clases con Scanner ----
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotas.java": {
+        "titulo": "Control de notas (básico)",
+        "desc": "Primer contacto con Scanner: pide las notas por teclado y muestra el resultado de los cálculos.",
+        "tags": ["Java", "Scanner", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotasIntermedio.java": {
+        "titulo": "Control de notas (intermedio)",
+        "desc": "Control de notas de varios alumnos con una clase propia, métodos separados y una lista de objetos.",
+        "tags": ["Java", "POO", "Scanner", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotasAvanzado.java": {
+        "titulo": "Control de notas (avanzado)",
+        "desc": "Control de notas con Scanner a nivel avanzado: validación antes de leer, conversión con control de errores y delimitadores.",
+        "tags": ["Java", "POO", "Scanner", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    // ---- Tarea 6: estacionamiento encapsulado ----
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoBasico.java": {
+        "titulo": "Estacionamiento (básico)",
+        "desc": "Control de estacionamiento, nivel básico: pregunta cuántos vehículos hay y las horas de cada uno, calcula el precio, la recaudación total y cuántos vehículos tienen descuento. Tarifa: 2 horas a 2,00 €/hora y cada hora adicional a 1,50 €, con un 10 % de descuento si el vehículo pasa de 5 horas.",
+        "tags": ["Java", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoIntermedio.java": {
+        "titulo": "Estacionamiento (intermedio)",
+        "desc": "El mismo cálculo que el básico, pero el main solo coordina: cada cosa vive en su método y los datos van en listas de objetos en vez de arrays de tamaño fijo.",
+        "tags": ["Java", "POO", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoAvanzado.java": {
+        "titulo": "Estacionamiento (avanzado)",
+        "desc": "Nivel avanzado: cada vehículo es un objeto con sus propios datos, la entrada se valida con try/catch y, además del total y los descuentos, se calculan estadísticas de quién ha estado más horas y quién paga más.",
+        "tags": ["Java", "POO", "Excepciones", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/Estacionamiento.java": {
+        "titulo": "Clase Estacionamiento",
+        "desc": "La clase del estacionamiento con los datos privados: nadie desde fuera toca las listas ni recalcula a su manera, todo pasa por sus métodos públicos.",
+        "tags": ["Java", "POO", "Encapsulación", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoMain.java": {
+        "titulo": "Main del estacionamiento",
+        "desc": "El main del proyecto: solo pide datos por teclado con Scanner y llama a los métodos públicos de Estacionamiento, con validación de enteros y try/catch para que el programa no se caiga.",
+        "tags": ["Java", "POO", "Scanner", "Tarea"],
+        "badge": "Hecho"
+    },
+
+    "TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/ControlAparcamiento.java": {
+        "titulo": "Control de Aparcamiento",
+        "desc": "Borrador inicial del control de estacionamiento: la primera versión del ejercicio, con el cálculo de la tarifa y el descuento por permanencia.",
         "tags": ["Java", "Tarea"],
         "badge": "Hecho"
     }
