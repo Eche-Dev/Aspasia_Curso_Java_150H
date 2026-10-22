@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     pintarPracticas();
     pintarJava();
     pintarClase();
+    pintarIA();
+    pintarBiblioteca();
 
     /* Avisamos a los efectos de main.js de que hay elementos nuevos
        para que vuelvan a vigilar (animaciones, contadores, fotos...) */
@@ -100,7 +102,9 @@ function pintarPortada() {
         { num: DATOS.resumenes.practicas, txt: 'prácticas manuales en casa' },
         { num: DATOS.resumenes.java, txt: 'ejercicios de Java' },
         { num: DATOS.resumenes.pdf, txt: 'PDF y cheatsheets descargados' },
-        { num: DATOS.resumenes.notas + DATOS.resumenes.fotos, txt: 'notas y fotos de clase' }
+        { num: DATOS.resumenes.notas + DATOS.resumenes.fotos, txt: 'notas y fotos de clase' },
+        { num: DATOS.resumenes.ia, txt: 'proyectos hechos con ayuda de IA' },
+        { num: DATOS.resumenes.biblioteca, txt: 'componentes en la biblioteca del profe' }
     ];
 
     var html = '';
@@ -114,8 +118,8 @@ function pintarPortada() {
 }
 
 
-/* ============ TARETAS DE TRABAJOS (tareas.html) ============ */
-/* Una tarjeta por cada HTML encontrado en ..\TAREAS */
+/* ============ TARJETAS DE TRABAJOS (tareas.html) ============ */
+/* Una tarjeta por cada HTML encontrado en ..\Tareas */
 
 function pintarTareas() {
 
@@ -170,7 +174,7 @@ function pintarTareas() {
 
 
 /* ============ TARJETAS DE PRÁCTICAS (practicas.html) ============ */
-/* Una tarjeta por cada HTML o CSS de ..\Practicas_Manuales_De_La_Tareas */
+/* Una tarjeta por cada HTML o CSS de ..\Practicas */
 
 function pintarPracticas() {
 
@@ -212,7 +216,7 @@ function pintarPracticas() {
 
 
 /* ============ TARJETAS DE JAVA (java.html) ============ */
-/* Una tarjeta por cada .java de ..\Java_Ejercicios */
+/* Una tarjeta por cada .java que haya dentro de ..\Java */
 
 function pintarJava() {
 
@@ -246,8 +250,127 @@ html += '<article class="glass-card java-card reveal">'
     if (badge) {
         badge.textContent = DATOS.java.length + ' ejercicios guardados';
     }
+
+    /* botón al índice resumen (lo genera ACTUALIZAR.bat en ..\Java) */
+    var acciones = caja('java-acciones');
+    if (acciones && DATOS.javaIndice) {
+        acciones.innerHTML = '<a class="btn btn-secondary" href="' + DATOS.javaIndice + '">'
+                           + 'Ver índice de todos los ejercicios</a>';
+    }
 }
 
+
+/* ============ TARJETAS DE IA (ia.html) ============ */
+/* Un grupo por cada proyecto de ..\Ejercicios_IA y un botón por página */
+
+function pintarIA() {
+
+    var contenedor = caja('lista-ia');
+    if (!contenedor || !DATOS.ia) { return; }
+
+    var html = '';
+
+    for (var i = 0; i < DATOS.ia.length; i++) {
+        var p = DATOS.ia[i];
+
+        html += '<article class="glass-card tarea-card reveal">'
+              + '    <div class="tarea-top">'
+              + '        <span class="tarea-num">' + dosCifras(i + 1) + '</span>'
+              + '        <span class="badge badge-done">' + p.badge + '</span>'
+              + '    </div>'
+              + '    <span class="tarea-entrega">' + p.proyecto + '</span>'
+              + '    <h3>' + p.titulo + '</h3>'
+              + '    <p>' + p.desc + '</p>'
+              + verTags(p.tags)
+              + '    <div class="tarea-btns">';
+
+        for (var b = 0; b < p.botones.length; b++) {
+            var clase = (b === 0) ? 'btn btn-primary' : 'btn btn-secondary';
+            html += '        <a class="' + clase + '" href="' + p.botones[b][0] + '">' + p.botones[b][1] + '</a>';
+        }
+
+        html += '    </div>'
+              + '</article>';
+    }
+
+    contenedor.innerHTML = html;
+
+    var badge = caja('badge-ia');
+    if (badge) { badge.textContent = DATOS.ia.length + ' proyectos con IA'; }
+}
+
+
+/* ============ BIBLIOTECA DE COMPONENTES (biblioteca.html) ============ */
+/* Una tarjeta por cada componente de ..\LibreriaProfe, con buscador
+   porque son más de cien y sin filtro costaría encontrar uno. */
+
+function pintarBiblioteca() {
+
+    var contenedor = caja('lista-biblioteca');
+    if (!contenedor || !DATOS.biblioteca) { return; }
+
+    var html = '';
+
+    for (var i = 0; i < DATOS.biblioteca.length; i++) {
+        var c = DATOS.biblioteca[i];
+
+        /* texto de búsqueda en minúsculas: nombre + título + descripción */
+        var buscar = (c.nombre + ' ' + c.titulo + ' ' + c.desc + ' ' + c.tags.join(' ')).toLowerCase();
+
+        html += '<article class="glass-card comp-card reveal" data-buscar="' + buscar + '">'
+              + '    <div class="comp-head">'
+              + '        <h3>' + c.titulo + '</h3>'
+              + '        <span class="badge badge-done">' + c.badge + '</span>'
+              + '    </div>'
+              + '    <span class="comp-nombre">' + c.nombre + '</span>'
+              + '    <p>' + c.desc + '</p>'
+              + verTags(c.tags)
+              + '    <a class="btn btn-primary" href="' + c.href + '" title="' + c.ruta + '">Ver componente</a>'
+              + '</article>';
+    }
+
+    contenedor.innerHTML = html;
+
+    var badge = caja('badge-biblioteca');
+    if (badge) {
+        badge.textContent = DATOS.biblioteca.length + ' componentes guardados';
+    }
+
+    conectarBuscador(contenedor);
+}
+
+
+/* Filtro en vivo del buscador de la biblioteca: escribe y las tarjetas
+   que no coinciden desaparecen. El contador de arriba avisa de cuántas
+   quedan. */
+
+function conectarBuscador(contenedor) {
+
+    var campo = caja('buscador-biblioteca');
+    if (!campo) { return; }
+
+    var aviso = caja('contador-busqueda');
+    var total = DATOS.biblioteca.length;
+
+    campo.addEventListener('input', function () {
+
+        var texto = campo.value.toLowerCase().trim();
+        var tarjetas = contenedor.querySelectorAll('.comp-card');
+        var visibles = 0;
+
+        for (var i = 0; i < tarjetas.length; i++) {
+            var coincide = (texto === '' || tarjetas[i].getAttribute('data-buscar').indexOf(texto) >= 0);
+            tarjetas[i].style.display = coincide ? '' : 'none';
+            if (coincide) { visibles++; }
+        }
+
+        if (aviso) {
+            aviso.textContent = (texto === '')
+                ? total + ' componentes'
+                : visibles + ' de ' + total + ' componentes';
+        }
+    });
+}
 
 /* ============ RECURSOS DE CLASE (clase.html) ============ */
 /* Pinta los PDF por grupos, las notas, las fotos y las páginas externas */

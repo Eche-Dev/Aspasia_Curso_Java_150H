@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- documento HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña -->
+    <title>Kindred.Java | Biblioteca</title>
+
+    <!-- tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido + CSS de las tarjetas + CSS del buscador -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tareas.css">
+    <link rel="stylesheet" href="css/biblioteca.css">
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}.aviso-js{display:block !important}</style></noscript>
+
+</head>
+
+<body>
+
+    <!-- elementos de los efectos -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <div class="logo" data-text="Kindred.Java">Kindred.Java</div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="java.html">Java</a>
+            <a href="clase.html">Clase</a>
+            <a href="ia.html">IA</a>
+            <a href="biblioteca.html" class="active">Biblioteca</a>
+            <!-- esta es la página actual: enlace activo -->
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="practicas.html">Prácticas</a>
+        <a href="java.html">Java</a>
+        <a href="clase.html">Clase</a>
+        <a href="ia.html">IA</a>
+        <a href="biblioteca.html" class="active">Biblioteca</a>
+    </div>
+
+    <main>
+    <!-- Aviso que solo se ve si el navegador tiene JavaScript desactivado -->
+    <p class="aviso-js">Activa JavaScript en tu navegador para ver los componentes.</p>
+
+        <!-- ============ CABECERA DE LA PÁGINA ============ -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-badge badge badge-gold" id="badge-biblioteca">Cargando...</span>
+                <h1 class="page-title">Biblioteca de <span class="accent">componentes</span></h1>
+                <p class="page-sub">
+                    Toda la colección de componentes front-end del profesor: botones,
+                    menús, tarjetas, loaders y animaciones. Escribe en el buscador para
+                    filtrarlos por nombre o por tecnología.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ BUSCADOR ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="buscador-wrap">
+                    <input type="search" class="buscador" id="buscador-biblioteca"
+                           placeholder="Buscar componente: navbar, card, loader, cursor..."
+                           autocomplete="off" aria-label="Buscar componente">
+                    <span class="buscador-cont" id="contador-busqueda"></span>
+                </div>
+
+                <!-- Las tarjetas las pinta js\render.js con los datos de js\datos.js.
+     Así, cuando añadas un componente al profe y ejecutes ACTUALIZAR.bat,
+     esta lista se actualiza sola y no hay que tocar este archivo. -->
+                <div class="biblioteca-grid" id="lista-biblioteca"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-logo">KINDRED.JAVA</div>
+        <p>Web personal de prácticas y apuntes de clase</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="java.html">Java</a>
+            <a href="clase.html">Clase</a>
+            <a href="ia.html">IA</a>
+            <a href="biblioteca.html">Biblioteca</a>
+        </div>
+        <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <!-- 1. datos.js: los datos que genera ACTUALIZAR.bat (NO se edita a mano) -->
+    <script src="js/datos.js"></script>
+
+    <!-- 2. render.js: pinta las tarjetas usando esos datos -->
+    <script src="js/render.js"></script>
+
+    <!-- 3. main.js: los efectos (contadores, animaciones, cursor, estrellas) -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

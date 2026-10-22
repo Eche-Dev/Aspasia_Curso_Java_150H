@@ -3,21 +3,21 @@
 ----------------------------------------------------------------
  Este archivo lo crea ACTUALIZAR.bat con los encabezados que
  tiene cada ejercicio. NO lo edites a mano: se reescribe solo.
- Generado el 16/10/2026 10:35
+ Generado el 22/10/2026 11:37
 ================================================================
 
- Hay 27 ejercicios. Cada bloque es un ejercicio:
+ Hay 31 ejercicios. Cada bloque es un ejercicio:
  primero su carpeta, luego su titulo y su descripcion, y al final
  los encabezados que lleva escritos el propio archivo .java.
 
 ================================================================
- Dia1 Ejercicio1
+ Proyecto - Dia1 Ejercicio1
 ================================================================
 
  Variables y tipos de datos
    Declara una variable de cada tipo básico (String, double, int y boolean) y las muestra por pantalla.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio1/Ej1.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio1/Ej1.java
    Encabezados del ejercicio:
      * PRIMER EJERCICIO FACIL - Ejercicio 1.
      * El enunciado pide declarar una variable de cada tipo basico y mostrarlas:
@@ -27,13 +27,13 @@
      * 4. Un boolean (verdadero o falso).
 
 ================================================================
- Dia1 Ejercicio2
+ Proyecto - Dia1 Ejercicio2
 ================================================================
 
  Datos de un producto
    Muestra una ficha con el nombre, el precio, las unidades disponibles y si el producto está en oferta.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio2/PProducto.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio2/PProducto.java
    Encabezados del ejercicio:
      * PRIMER EJERCICIO FACIL - Ejercicio del producto.
      * El enunciado pide declarar una variable de cada tipo basico con datos
@@ -44,26 +44,26 @@
      * 4. Un boolean que dice si esta en oferta.
 
 ================================================================
- Dia1 Ejercicio3
+ Proyecto - Dia1 Ejercicio3
 ================================================================
 
  Ficha personal
    Presenta mis datos personales: país, ciudad, edad, cumpleaños, dirección y estudios.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio3/YoSolito.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio3/YoSolito.java
    Encabezados del ejercicio:
      * PRIMER EJERCICIO FACIL - Presentacion personal ("Yo solito").
      * El enunciado pide declarar una variable para cada dato personal
      * (texto, enteros y booleanos) y mostrarlos todos en pantalla.
 
 ================================================================
- Dia1 Ejercicio4
+ Proyecto - Dia1 Ejercicio4
 ================================================================
 
  Clase Alumno
    Primera clase con atributos y métodos: crea la ficha de un alumno (nombre, nota, faltas) y dice si ha aprobado.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio4/Alumno.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio4/Alumno.java
    Encabezados del ejercicio:
      * DIA 1 - EJERCICIO 4: creacion de una clase (POO).
      * El enunciado pide crear la clase "Alumno" con los datos:
@@ -76,13 +76,13 @@
      * se entra por el setter y se sale por el getter.
 
 ================================================================
- Dia1 Ejercicio5
+ Proyecto - Dia1 Ejercicio5
 ================================================================
 
  Probando la clase Alumno
    Crea un objeto de la clase Alumno con datos de prueba e imprime su ficha completa por pantalla.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio5/PAlumno.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio5/PAlumno.java
    Encabezados del ejercicio:
      * DIA 1 - EJERCICIO 5: uso de la clase Alumno.
      * El enunciado pide crear un alumno y probarlo:
@@ -91,13 +91,13 @@
      * 3. Llamar al metodo mostrar().
 
 ================================================================
- Dia1 Ejercicio6
+ Proyecto - Dia1 Ejercicio6
 ================================================================
 
  Atributos y setters
    Guarda los puntos iniciales en un atributo de la clase yPractica el getter y el setter para leerlo y cambiarlo.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio6/Variables.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio6/Variables.java
    Encabezados del ejercicio:
      * DIA 1 - EJERCICIO 6: clase Variables.
      * El enunciado pide:
@@ -112,13 +112,13 @@
      * Solucion: usar F6 ("Run Project") o hacer "Clean and Build" una vez.
 
 ================================================================
- Dia1 Ejercicio7
+ Proyecto - Dia1 Ejercicio7
 ================================================================
 
  Puntos iniciales
    Crea un objeto con 10 puntos de valor inicial y muestra su número y su texto.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia1_Ejercicio7/VariableRun.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia1_Ejercicio7/VariableRun.java
    Encabezados del ejercicio:
      * DIA 1 - EJERCICIO 7: uso de la clase Variables.
      * El enunciado pide:
@@ -127,13 +127,13 @@
      * 3. Ver el toString() del objeto.
 
 ================================================================
- Dia2 Ejercicio1
+ Proyecto - Dia2 Ejercicio1
 ================================================================
 
  Datos con Scanner
    Pide por teclado el nombre, la edad y la altura y muestra después una ficha con los tres datos.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia2_Ejercicio1/AngelEjercicio.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia2_Ejercicio1/AngelEjercicio.java
    Encabezados del ejercicio:
      * DIA 2 - EJERCICIO 1: pedir datos por teclado.
      * El enunciado pide:
@@ -143,13 +143,13 @@
      * 4. Mostrar los tres datos.
 
 ================================================================
- Dia2 Ejercicio2
+ Proyecto - Dia2 Ejercicio2
 ================================================================
 
  Precio con descuentos
    Calcula el precio final de una compra aplicando un 10 % de descuento y después un 21 % de IVA.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia2_Ejercicio2/PercioConDescuentos.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia2_Ejercicio2/PercioConDescuentos.java
    Encabezados del ejercicio:
      * DIA 2 - EJERCICIO 2: precio con descuento e IVA.
      * El enunciado pide:
@@ -163,13 +163,13 @@
      * 8. Mostrarlo en pantalla.
 
 ================================================================
- Dia2 Ejercicio3
+ Proyecto - Dia2 Ejercicio3
 ================================================================
 
  Triángulo completo
    Pide la base y la altura por teclado y calcula el área, la hipotenusa y el perímetro del triángulo.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia2_Ejercicio3/AngelEjercios2.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia2_Ejercicio3/AngelEjercios2.java
    Encabezados del ejercicio:
      * DIA 2 - EJERCICIO 3: triangulo (area y perimetro) pidiendo datos por teclado.
      * El enunciado pide:
@@ -181,25 +181,25 @@
      * 6. Mostrar el resultado.
 
 ================================================================
- Dia3 Ejercicio1
+ Proyecto - Dia3 Ejercicio1
 ================================================================
 
  Área de un triángulo
    Pide la base y la altura por teclado y muestra el área del triángulo (base x altura / 2).
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia3_Ejercicio1/AreaTriangulo.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia3_Ejercicio1/AreaTriangulo.java
    Encabezados del ejercicio:
      * Pide por teclado la base y la altura de un triangulo
      * y calcula su area con la formula: area = (base * altura) / 2
 
 ================================================================
- Dia3 Ejercicio2
+ Proyecto - Dia3 Ejercicio2
 ================================================================
 
  Calculadora de la compra
    Calcula el importe de una compra y le aplica un 10 % de descuento solo si supera los 100 €, más un 21 % de IVA.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo1/Dia3_Ejercicio2/Calculadora.java
+   Archivo: Java/Proyecto/src/main/java/Modulo1/Dia3_Ejercicio2/Calculadora.java
    Encabezados del ejercicio:
      * DIA 3 - EJERCICIO 2: Calculadora de compras con descuento por importe.
      * El enunciado pide:
@@ -215,13 +215,13 @@
      * 10. Mostrarlo todo en pantalla.
 
 ================================================================
- Tarea4 Ejercicio1
+ Proyecto - Tarea4 Ejercicio1
 ================================================================
 
  Precio con descuento e IVA
    Versión sencilla (todo dentro del main) del precio final de 3 zapatillas con un 10 % de descuento y un 21 % de IVA.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio1/PrecioConDescuentoEIVA.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea4_Ejercicio1/PrecioConDescuentoEIVA.java
    Encabezados del ejercicio:
      * TAREA 4 - Precio con descuento e IVA (version sencilla, todo dentro del main).
      * El enunciado pide:
@@ -235,13 +235,13 @@
      * 8. Mostrarlo en pantalla.
 
 ================================================================
- Tarea4 Ejercicio1
+ Proyecto - Tarea4 Ejercicio1
 ================================================================
 
  Precio con descuento e IVA (Tarea 9)
    Tercera versión del ejercicio del precio final: 5 productos de 50 € con un 10 % de descuento y un 21 % de IVA, con los porcentajes como variables.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio1/precioDescuento.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea4_Ejercicio1/precioDescuento.java
    Encabezados del ejercicio:
      * TERCER DIA - Precio con descuento e IVA.
      * El enunciado pide:
@@ -255,13 +255,13 @@
      * 8. Mostrarlo en pantalla.
 
 ================================================================
- Tarea4 Ejercicio2
+ Proyecto - Tarea4 Ejercicio2
 ================================================================
 
  Clase Compra
    El mismo cálculo del precio final pero con los datos guardados en los atributos de una clase y cada cálculo en su método.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio2/Compra.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea4_Ejercicio2/Compra.java
    Encabezados del ejercicio:
      * TAREA 4 - Precio con descuento e IVA (version con clase).
      * En vez de hacer todos los calculos dentro del main, se guardan los datos
@@ -271,13 +271,13 @@
      * Una comparacion detallada de las dos versiones esta en el archivo DIFERENCIAS.md.
 
 ================================================================
- Tarea4 Ejercicio3
+ Proyecto - Tarea4 Ejercicio3
 ================================================================
 
  Temperaturas de la semana (con clase)
    Guarda las 7 temperaturas en un array y calcula en métodos aparte la suma, la media, la máxima, la mínima y los días por encima de la media.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TemperaturaSemanales.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea4_Ejercicio3/TemperaturaSemanales.java
    Encabezados del ejercicio:
      * TAREA 4 - Temperaturas de una semana (version con clase).
      * Se guardan las 7 temperaturas de la semana en un array y cada calculo
@@ -285,13 +285,13 @@
      * propio metodo, de forma que la clase se pueda reutilizar mas adelante.
 
 ================================================================
- Tarea4 Ejercicio3
+ Proyecto - Tarea4 Ejercicio3
 ================================================================
 
  Temperaturas de la semana (sencillo)
    El mismo ejercicio con las temperaturas escritas a mano y todo el cálculo dentro del main, sin clases ni métodos.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanales2.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanales2.java
    Encabezados del ejercicio:
      * TAREA 4 - Temperaturas de la semana (version sencilla, todo dentro del main).
      * El enunciado pide:
@@ -302,13 +302,13 @@
      * 5. Mostrarlo en pantalla.
 
 ================================================================
- Tarea4 Ejercicio3
+ Proyecto - Tarea4 Ejercicio3
 ================================================================
 
  Temperaturas de la semana (por teclado)
    El mismo ejercicio pero el programa pregunta la temperatura de cada día con un Scanner y la guarda en un array.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanalesTeclado.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea4_Ejercicio3/TempSemanalesTeclado.java
    Encabezados del ejercicio:
      * TAREA 4 - Temperaturas de la semana pedidas por teclado.
      * Mismo ejercicio que los anteriores, pero en vez de escribir las temperaturas
@@ -318,55 +318,55 @@
      * y un bucle for que va tomando una temperatura por cada nombre.
 
 ================================================================
- Tarea5 Ejercicio2
+ Proyecto - Tarea5 Ejercicio2
 ================================================================
 
  Control de notas (básico)
    Primer contacto con Scanner: pide las notas por teclado y muestra el resultado de los cálculos.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotas.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotas.java
 
 ================================================================
- Tarea5 Ejercicio2
+ Proyecto - Tarea5 Ejercicio2
 ================================================================
 
  Control de notas (avanzado)
    Control de notas con Scanner a nivel avanzado: validación antes de leer, conversión con control de errores y delimitadores.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotasAvanzado.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotasAvanzado.java
    Encabezados del ejercicio:
      * Control de notas usando Scanner a un nivel más avanzado:
      * validación antes de leer, conversión con control de errores y delimitadores.
 
 ================================================================
- Tarea5 Ejercicio2
+ Proyecto - Tarea5 Ejercicio2
 ================================================================
 
  Control de notas (intermedio)
    Control de notas de varios alumnos con una clase propia, métodos separados y una lista de objetos.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotasIntermedio.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea5_Ejercicio2/ClasesNotasIntermedio.java
    Encabezados del ejercicio:
      * Control de notas de varios alumnos, en nivel intermedio:
      * una clase propia, métodos separados y una lista de objetos.
 
 ================================================================
- Tarea6 Ejercicio1
+ Proyecto - Tarea6 Ejercicio1
 ================================================================
 
  Control de Aparcamiento
    Borrador inicial del control de estacionamiento: la primera versión del ejercicio, con el cálculo de la tarifa y el descuento por permanencia.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/ControlAparcamiento.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea6_Ejercicio1/ControlAparcamiento.java
 
 ================================================================
- Tarea6 Ejercicio1
+ Proyecto - Tarea6 Ejercicio1
 ================================================================
 
  Clase Estacionamiento
    La clase del estacionamiento con los datos privados: nadie desde fuera toca las listas ni recalcula a su manera, todo pasa por sus métodos públicos.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/Estacionamiento.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea6_Ejercicio1/Estacionamiento.java
    Encabezados del ejercicio:
      * Control de estacionamiento encapsulado.
      * Los datos son privados: nadie desde fuera puede tocar las listas ni
@@ -376,13 +376,13 @@
      * Si el vehículo ha estado más de 5 horas, se aplica un 10 % de descuento.
 
 ================================================================
- Tarea6 Ejercicio1
+ Proyecto - Tarea6 Ejercicio1
 ================================================================
 
  Estacionamiento (avanzado)
    Nivel avanzado: cada vehículo es un objeto con sus propios datos, la entrada se valida con try/catch y, además del total y los descuentos, se calculan estadísticas de quién ha estado más horas y quién paga más.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoAvanzado.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoAvanzado.java
    Encabezados del ejercicio:
      * Control de estacionamiento, nivel avanzado.
      * Cada vehículo es un objeto con sus propios datos, la entrada se valida
@@ -392,13 +392,13 @@
      * Si el vehículo ha estado más de 5 horas, se aplica un 10 % de descuento.
 
 ================================================================
- Tarea6 Ejercicio1
+ Proyecto - Tarea6 Ejercicio1
 ================================================================
 
  Estacionamiento (básico)
    Control de estacionamiento, nivel básico: pregunta cuántos vehículos hay y las horas de cada uno, calcula el precio, la recaudación total y cuántos vehículos tienen descuento. Tarifa: 2 horas a 2,00 €/hora y cada hora adicional a 1,50 €, con un 10 % de descuento si el vehículo pasa de 5 horas.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoBasico.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoBasico.java
    Encabezados del ejercicio:
      * Control de estacionamiento, nivel básico.
      * Pregunta cuántos vehículos hay y las horas de cada uno, calcula el precio
@@ -407,13 +407,13 @@
      * Si el vehículo ha estado más de 5 horas, se aplica un 10 % de descuento.
 
 ================================================================
- Tarea6 Ejercicio1
+ Proyecto - Tarea6 Ejercicio1
 ================================================================
 
  Estacionamiento (intermedio)
    El mismo cálculo que el básico, pero el main solo coordina: cada cosa vive en su método y los datos van en listas de objetos en vez de arrays de tamaño fijo.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoIntermedio.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoIntermedio.java
    Encabezados del ejercicio:
      * Control de estacionamiento, nivel intermedio.
      * Mismo cálculo que el básico, pero el main solo coordina:
@@ -423,16 +423,52 @@
      * Si el vehículo ha estado más de 5 horas, se aplica un 10 % de descuento.
 
 ================================================================
- Tarea6 Ejercicio1
+ Proyecto - Tarea6 Ejercicio1
 ================================================================
 
  Main del estacionamiento
    El main del proyecto: solo pide datos por teclado con Scanner y llama a los métodos públicos de Estacionamiento, con validación de enteros y try/catch para que el programa no se caiga.
 
-   Archivo: TAREAS/Novena_tarea/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoMain.java
+   Archivo: Java/Proyecto/src/main/java/Modulo2/Tarea6_Ejercicio1/EstacionamientoMain.java
    Encabezados del ejercicio:
      * Main del control de estacionamiento.
      * Aquí solo se pide datos por teclado y se llaman los métodos públicos
      * de Estacionamiento. La clase Estacionamiento guarda y calcula; este
      * main no toca sus datos privados.
+
+================================================================
+ Sueltos
+================================================================
+
+ Primerclase
+   Ejercicio de Java: Sueltos.
+
+   Archivo: Java/Sueltos/PrimerClase.java
+
+================================================================
+ UltimaSemana
+================================================================
+
+ Calculadoradesalarios
+   Ejercicio de Java: UltimaSemana.
+
+   Archivo: Java/UltimaSemana/CalculadoraDeSalarios.java
+
+================================================================
+ UltimaSemana
+================================================================
+
+ Calculadoradesalariosavanzado
+   Ejercicio de Java: UltimaSemana.
+
+   Archivo: Java/UltimaSemana/CalculadoraDeSalariosAvanzado.java
+
+================================================================
+ UltimaSemana
+================================================================
+
+ Calculadoradesalariosintermedio
+   Ejercicio de Java: UltimaSemana.
+
+   Archivo: Java/UltimaSemana/CalculadoraDeSalariosIntermedio.java
 

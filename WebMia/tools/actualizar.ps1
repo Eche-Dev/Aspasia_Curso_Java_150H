@@ -4,9 +4,12 @@
 #  Que hace:  mira dentro de estas carpetas y crea el archivo
 #             js\datos.js con TODO lo que encuentra:
 #
-#       ..\TAREAS                        -> trabajos de clase
-#       ..\Practicas_Manuales_De_La_Tareas -> practicas de casa
-#       ..\Informacion_De_Clase          -> PDF, fotos y notas
+#       ..\Tareas          -> trabajos de clase (HTML / CSS / JS)
+#       ..\Practicas       -> practicas manuales de casa
+#       ..\Java            -> TODOS los ejercicios de Java
+#       ..\Recursos        -> PDF, fotos y notas de clase
+#       ..\Ejercicios_IA   -> proyectos hechos con ayuda de IA
+#       ..\LibreriaProfe   -> coleccion de componentes del profe
 #
 #  Los titulos se leen del <title> de cada HTML.
 #  Las descripciones y etiquetas se sacan de  datos\meta.js
@@ -122,6 +125,14 @@ $META_RECURSOS = @{}
 $bloque = Leer-VariableJs $textoMeta "META_RECURSOS"
 if ($bloque) { $META_RECURSOS = $bloque | ConvertFrom-Json }
 
+$META_IA = @{}
+$bloque = Leer-VariableJs $textoMeta "META_IA"
+if ($bloque) { $META_IA = $bloque | ConvertFrom-Json }
+
+$META_BIBLIOTECA = @{}
+$bloque = Leer-VariableJs $textoMeta "META_BIBLIOTECA"
+if ($bloque) { $META_BIBLIOTECA = $bloque | ConvertFrom-Json }
+
 $EXTERNAS = @()
 $bloque = Leer-VariableJs $textoMeta "EXTERNAS"
 if ($bloque) {
@@ -146,7 +157,7 @@ function Get-Meta($bloque, $ruta) {
 
 # ---------- UTILLES ----------
 
-# Ruta del archivo con "/" y sin la carpeta java (ej: "TAREAS/Primera_Tarea/index.html")
+# Ruta del archivo con "/" y sin la carpeta del proyecto (ej: "Tareas/Primera_Tarea/index.html")
 function Get-RutaRelativa($archivo) {
     $r = $archivo.FullName.Substring($base.Length + 1)
     return $r -replace '\\', '/'
@@ -211,12 +222,12 @@ function Objeto($campos) {
 }
 
 
-# ---------- 1. TRABAJOS DE CLASE (..\TAREAS) ----------
+# ---------- 1. TRABAJOS DE CLASE (..\Tareas) ----------
 # Cada TARJETA de la web es un grupo de paginas de una misma carpeta:
 #
-#   TAREAS\Primera_Tarea\index.html + PrimerEjecicio.md   -> tarjeta 01
-#   TAREAS\Cuarta_tarea\Tarea1\index.html + ...pdf       -> tarjeta 04
-#   TAREAS\Cuarta_tarea\Tarea2\index.html + ...pdf       -> tarjeta 05
+#   Tareas\Primera_Tarea\index.html + PrimerEjecicio.md   -> tarjeta 01
+#   Tareas\Cuarta_tarea\Tarea1\index.html + ...pdf       -> tarjeta 04
+#   Tareas\Cuarta_tarea\Tarea2\index.html + ...pdf       -> tarjeta 05
 #
 # COMO SE SABE QUE PDF ES DE QUE EJERCICIO:
 # el PDF se asigna a la pagina que esta en la MISMA CARPETA.
@@ -227,7 +238,7 @@ function Objeto($campos) {
 # Si en meta.js una entrega declara "tarjetas", se respetan esas tarjetas
 # en vez de agrupar por carpeta (sirve para cambiar el reparto).
 
-$carpetaTareas = Join-Path $base "TAREAS"
+$carpetaTareas = Join-Path $base "Tareas"
 $listaTareas = @()
 
 if (Test-Path -LiteralPath $carpetaTareas) {
@@ -250,7 +261,7 @@ if (Test-Path -LiteralPath $carpetaTareas) {
     foreach ($a in $archivos) {
 
         $ruta = Get-RutaRelativa $a
-        $relativo = $ruta.Substring("TAREAS/".Length)   # Cuarta_tarea/Tarea1/index.html
+        $relativo = $ruta.Substring("Tareas/".Length)   # Cuarta_tarea/Tarea1/index.html
         $partes = $relativo -split '/'
 
         $entrega = $partes[0]                            # Cuarta_tarea
@@ -440,8 +451,8 @@ if (Test-Path -LiteralPath $carpetaTareas) {
 
             # texto personalizado desde meta.js
             $rel = Get-RutaRelativa $f
-            $recorte = "TAREAS/"
-            if ($f.Directory.Parent.Name) { $recorte = "TAREAS/" + $f.Directory.Parent.Name + "/" }
+            $recorte = "Tareas/"
+            if ($f.Directory.Parent.Name) { $recorte = "Tareas/" + $f.Directory.Parent.Name + "/" }
             if ($rel.StartsWith($recorte)) { $rel = $rel.Substring($recorte.Length) }
 
             $p = $null
@@ -493,9 +504,9 @@ if (Test-Path -LiteralPath $carpetaTareas) {
     }
 }
 
-# ---------- 2. PRACTICAS DE CASA (..\Practicas_Manuales_De_La_Tareas) ----------
+# ---------- 2. PRACTICAS DE CASA (..\Practicas) ----------
 
-$carpetaPracticas = Join-Path $base "Practicas_Manuales_De_La_Tareas"
+$carpetaPracticas = Join-Path $base "Practicas"
 $listaPracticas = @()
 
 if (Test-Path -LiteralPath $carpetaPracticas) {
@@ -548,29 +559,45 @@ if (Test-Path -LiteralPath $carpetaPracticas) {
 }
 
 
-# ---------- 2bis. EJERCICIOS DE JAVA (..\TAREAS\Novena_tarea) ----------
-# Cada archivo .java del proyecto es una tarjeta de la pagina java.html.
-# Los enlaces salen con ruta relativa a la web ("../TAREAS/...").
+# ---------- 2bis. EJERCICIOS DE JAVA (..\Java) ----------
+# Cada archivo .java que haya dentro de la carpeta Java es una tarjeta de
+# la pagina java.html. Se mira TODA la carpeta, asi entran:
+#
+#   Java\Proyecto       -> el proyecto Maven de la Novena Tarea
+#   Java\UltimaSemana   -> los ejercicios de la ultima semana
+#   Java\Sueltos        -> ejercicios sueltos
+#
+# Los enlaces salen con ruta relativa a la web ("../Java/...").
 
-$carpetaJava = Join-Path $base "TAREAS\Novena_tarea\src\main\java"
+$carpetaJava = Join-Path $base "Java"
 $listaJava = @()
 $datosJava = @()
+$hrefIndice = ""
 
 if (Test-Path -LiteralPath $carpetaJava) {
 
     $archivos = Get-ChildItem -LiteralPath $carpetaJava -Recurse -File -Filter *.java |
+        Where-Object { $_.FullName -notmatch '\\(target|bin|\.git|\.vscode)\\' } |
         Sort-Object FullName
 
     foreach ($a in $archivos) {
 
         $ruta = Get-RutaRelativa $a
-        $carpeta = $a.Directory.Name          # Dia1_Ejercicio1, Tarea4_Ejercicio3...
+
+        # --- area (Proyecto / UltimaSemana / Sueltos) y carpeta del ejercicio ---
+        $partes = $ruta.Substring("Java/".Length) -split '/'
+        $area = $partes[0]
+        if ($partes.Count -gt 2) { $carpeta = $partes[$partes.Count - 2] }
+        else { $carpeta = $area }
+
+        if ($area -eq $carpeta) { $etiqueta = $area }
+        else { $etiqueta = $area + " - " + ($carpeta -replace '[-_]', ' ') }
 
         # --- titulo: el de meta.js o, si no, el nombre de la clase ---
         $titulo = Get-TituloDesdeNombre $a.Name
 
         # --- metadatos ---
-        $desc = "Ejercicio de Java de " + ($carpeta -replace '[-_]', ' ') + "."
+        $desc = "Ejercicio de Java: " + ($carpeta -replace '[-_]', ' ') + "."
         $tags = @("Java")
         $badge = "Hecho"
 
@@ -583,7 +610,7 @@ if (Test-Path -LiteralPath $carpetaJava) {
         }
 
         $campos = [ordered]@{
-            carpeta = (Q ($carpeta -replace '[-_]', ' '))
+            carpeta = (Q $etiqueta)
             ruta    = (Q $ruta)
             href    = (Q (Get-Href $ruta))
             titulo  = (Q $titulo)
@@ -594,12 +621,12 @@ if (Test-Path -LiteralPath $carpetaJava) {
         $listaJava += "    " + (Objeto $campos)
 
         # se guarda aparte, sin las comillas de JavaScript, para el resumen en Markdown
-        $datosJava += @{ carpeta = ($carpeta -replace '[-_]', ' '); ruta = $ruta; titulo = $titulo; desc = $desc }
+        $datosJava += @{ carpeta = $etiqueta; ruta = $ruta; titulo = $titulo; desc = $desc }
     }
 
     # --- resumen en Markdown con los encabezados de todos los ejercicios ---
-    # El boton "Ver indice" de la Novena Tarea abre este archivo. Se escribe
-    # aqui para que se actualice solo: no hay que tocarlo nunca a mano.
+    # El boton "Ver indice" de la pagina java.html abre este archivo. Se
+    # escribe aqui para que se actualice solo: no hay que tocarlo a mano.
 
     $lineas = @()
     $lineas += "================================================================"
@@ -644,17 +671,18 @@ if (Test-Path -LiteralPath $carpetaJava) {
         $lineas += ""
     }
 
-    $dirResumen = Join-Path $base "TAREAS\Novena_tarea\src\main\java\Modulo2\Tarea4_Ejercicio2"
+    $dirResumen = Join-Path $base "Java"
     if (-not (Test-Path -LiteralPath $dirResumen)) { New-Item -ItemType Directory -Path $dirResumen -Force | Out-Null }
     $resumen = Join-Path $dirResumen "RESUMEN-JAVA.md"
     [IO.File]::WriteAllText($resumen, (($lineas -join "`r`n") + "`r`n"), (New-Object System.Text.UTF8Encoding $true))
+    $hrefIndice = Get-Href "Java/RESUMEN-JAVA.md"
     Write-Host "  indice    : RESUMEN-JAVA.md con los encabezados de $($datosJava.Count) ejercicios" -ForegroundColor DarkGray
 }
 
 
-# ---------- 3. RECURSOS DE CLASE (..\Informacion_De_Clase) ----------
+# ---------- 3. RECURSOS DE CLASE (..\Recursos) ----------
 
-$carpetaInfo = Join-Path $base "Informacion_De_Clase"
+$carpetaInfo = Join-Path $base "Recursos"
 $grupos = [ordered]@{ html = @(); css = @(); manual = @(); vscode = @(); java = @() }
 $listaNotas = @()
 $listaFotos = @()
@@ -708,6 +736,121 @@ if (Test-Path -LiteralPath $carpetaInfo) {
 }
 
 
+# ---------- 3bis. EJERCICIOS HECHOS CON IA (..\Ejercicios_IA) ----------
+# Un grupo por cada proyecto (la primera carpeta dentro de Ejercicios_IA)
+# y un boton por cada pagina HTML que tenga ese proyecto.
+
+$carpetaIA = Join-Path $base "Ejercicios_IA"
+$listaIA = @()
+
+if (Test-Path -LiteralPath $carpetaIA) {
+
+    $htmlIA = Get-ChildItem -LiteralPath $carpetaIA -Recurse -File -Filter *.html |
+        Where-Object { $_.FullName -notmatch '\\(node_modules|\.git)\\' } |
+        Sort-Object FullName
+
+    $gruposIA = [ordered]@{}
+    foreach ($a in $htmlIA) {
+        $ruta = Get-RutaRelativa $a
+        $proyecto = ($ruta.Substring("Ejercicios_IA/".Length)) -split '/'
+        $clave = $proyecto[0]
+        if (-not $gruposIA.Contains($clave)) { $gruposIA[$clave] = @() }
+        $gruposIA[$clave] += $a
+    }
+
+    foreach ($clave in $gruposIA.Keys) {
+
+        $paginas = @($gruposIA[$clave] | Sort-Object FullName)
+        $meta = Get-Meta $META_IA $clave
+
+        $titulo = ""
+        $desc = "Proyecto de " + ($clave -replace '[-_]', ' ') + " hecho con ayuda de IA."
+        $tags = @("HTML", "CSS", "JS")
+        $badge = "Con IA"
+        $principal = ""
+
+        if ($meta) {
+            if ($meta.titulo) { $titulo = $meta.titulo }
+            if ($meta.desc) { $desc = $meta.desc }
+            if ($meta.tags) { $tags = $meta.tags }
+            if ($meta.badge) { $badge = $meta.badge }
+            if ($meta.principal) { $principal = $meta.principal }
+        }
+        if (-not $titulo) { $titulo = ($clave -replace '[-_]', ' ') }
+
+        # pagina principal: la declarada o, si no, index.html o la primera
+        $principalFichero = @($paginas | Where-Object {
+                $_.Name -eq $principal -or
+                (-not $principal -and $_.Name -eq "index.html") }) | Select-Object -First 1
+        if (-not $principalFichero) { $principalFichero = @($paginas[0]) }
+
+        $botones = @()
+        foreach ($f in $paginas) {
+            $texto = Get-TituloHtml $f.FullName
+            if ($texto -eq "") { $texto = Get-TituloDesdeNombre $f.Name }
+            $botones += (Q-Array @((Get-Href (Get-RutaRelativa $f)), $texto))
+        }
+
+        $campos = [ordered]@{
+            proyecto = (Q ($clave -replace '[-_]', ' '))
+            titulo   = (Q $titulo)
+            desc     = (Q $desc)
+            tags     = $tags
+            badge    = (Q $badge)
+            botones  = "[" + ($botones -join ", ") + "]"
+        }
+        $listaIA += "    " + (Objeto $campos)
+    }
+}
+
+
+# ---------- 3ter. COLECCION DE COMPONENTES (..\LibreriaProfe) ----------
+# Un boton por cada componente de la coleccion del profe.
+
+$carpetaLibreria = Join-Path $base "LibreriaProfe"
+$listaLibreria = @()
+
+if (Test-Path -LiteralPath $carpetaLibreria) {
+
+    $htmlLib = Get-ChildItem -LiteralPath $carpetaLibreria -Recurse -File -Filter *.html |
+        Sort-Object FullName
+
+    foreach ($a in $htmlLib) {
+
+        $ruta = Get-RutaRelativa $a
+        $nombre = $a.Directory.Name
+        $meta = Get-Meta $META_BIBLIOTECA $nombre
+
+        # el nombre de la carpeta es el nombre real del componente
+        $titulo = Get-TituloDesdeNombre $nombre
+        if ($meta -and $meta.titulo) { $titulo = $meta.titulo }
+
+        $desc = "Componente de la coleccion del profe: " + ($nombre -replace '[-_]', ' ') + "."
+        if ($meta -and $meta.desc) { $desc = $meta.desc }
+
+        # tecnologias que usa el componente
+        $tags = @("HTML")
+        $carpetaComp = $a.Directory.FullName
+        if (@(Get-ChildItem -LiteralPath $carpetaComp -Recurse -File -Filter *.css -ErrorAction SilentlyContinue).Count -gt 0) { $tags += "CSS" }
+        if (@(Get-ChildItem -LiteralPath $carpetaComp -Recurse -File -Filter *.js -ErrorAction SilentlyContinue).Count -gt 0) { $tags += "JS" }
+
+        $badge = "Listo"
+        if ($meta -and $meta.badge) { $badge = $meta.badge }
+
+        $campos = [ordered]@{
+            nombre = (Q $nombre)
+            ruta   = (Q $ruta)
+            href   = (Q (Get-Href $ruta))
+            titulo = (Q $titulo)
+            desc   = (Q $desc)
+            tags   = $tags
+            badge  = (Q $badge)
+        }
+        $listaLibreria += "    " + (Objeto $campos)
+    }
+}
+
+
 # ---------- 4. PAGINAS EXTERNAS (escritas a mano en meta.js) ----------
 
 $listaExternas = @()
@@ -741,22 +884,35 @@ $L += "   ============================================================ */"
 $L += ""
 $L += "var DATOS = {"
 $L += ""
-$L += "  /* Trabajos de clase encontrados en ..\TAREAS */"
+$L += "  /* Trabajos de clase encontrados en ..\Tareas */"
 $L += "  tareas: ["
 $L += ($listaTareas -join ",`r`n")
 $L += "  ],"
 $L += ""
-$L += "  /* Practicas de casa encontradas en ..\Practicas_Manuales_De_La_Tareas */"
+$L += "  /* Practicas de casa encontradas en ..\Practicas */"
 $L += "  practicas: ["
 $L += ($listaPracticas -join ",`r`n")
 $L += "  ],"
 $L += ""
-$L += "  /* Ejercicios de Java encontrados en ..\Java_Ejercicios */"
+$L += "  /* TODOS los ejercicios de Java encontrados en ..\Java */"
 $L += "  java: ["
 $L += ($listaJava -join ",`r`n")
 $L += "  ],"
 $L += ""
-$L += "  /* PDF de ..\Informacion_De_Clase, agrupados por carpeta */"
+$L += "  /* Enlace al indice resumen de todos los ejercicios de Java */"
+$L += "  javaIndice: " + (Q $hrefIndice) + ","
+$L += ""
+$L += "  /* Proyectos hechos con IA, encontrados en ..\Ejercicios_IA */"
+$L += "  ia: ["
+$L += ($listaIA -join ",`r`n")
+$L += "  ],"
+$L += ""
+$L += "  /* Componentes de la coleccion del profe, en ..\LibreriaProfe */"
+$L += "  biblioteca: ["
+$L += ($listaLibreria -join ",`r`n")
+$L += "  ],"
+$L += ""
+$L += "  /* PDF de ..\Recursos, agrupados por carpeta */"
 $L += "  recursos: {"
 $L += "    html:   [" + ($grupos.html -join ", ") + "],"
 $L += "    css:    [" + ($grupos.css -join ", ") + "],"
@@ -785,7 +941,9 @@ $L += "  java: " + $listaJava.Count + ","
 $L += "  pdf: " + $totalRecursos + ","
 $L += "  notas: " + $listaNotas.Count + ","
 $L += "  fotos: " + $listaFotos.Count + ","
-$L += "  recursos: " + ($totalRecursos + $listaNotas.Count + $listaFotos.Count)
+$L += "  recursos: " + ($totalRecursos + $listaNotas.Count + $listaFotos.Count) + ","
+$L += "  ia: " + $listaIA.Count + ","
+$L += "  biblioteca: " + $listaLibreria.Count
 $L += "};"
 
 $texto = $L -join "`r`n"
@@ -798,6 +956,8 @@ Write-Host ""
 Write-Host "  TAREAS    : $($listaTareas.Count) trabajos" -ForegroundColor Green
 Write-Host "  PRACTICAS : $($listaPracticas.Count) archivos" -ForegroundColor Green
 Write-Host "  JAVA      : $($listaJava.Count) ejercicios" -ForegroundColor Green
+Write-Host "  IA        : $($listaIA.Count) proyectos" -ForegroundColor Green
+Write-Host "  BIBLIOTECA: $($listaLibreria.Count) componentes" -ForegroundColor Green
 Write-Host "  PDF       : $totalRecursos" -ForegroundColor Green
 Write-Host "  NOTAS .md : $($listaNotas.Count)" -ForegroundColor Green
 Write-Host "  FOTOS     : $($listaFotos.Count)" -ForegroundColor Green

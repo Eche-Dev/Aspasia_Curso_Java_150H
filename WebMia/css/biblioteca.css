@@ -1,0 +1,117 @@
+/* ============================================================
+   KINDRED.JAVA - CSS DE LA PÁGINA BIBLIOTECA (biblioteca.html)
+   ------------------------------------------------------------
+   Lo único propio de esta página es el buscador y la rejilla
+   de componentes. Las tarjetas y la cabecera vienen de base.css
+   y de tareas.css, que se cargan antes que este archivo.
+   ============================================================ */
+
+
+/* ============ BUSCADOR ============ */
+
+.buscador-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.buscador {
+    flex: 1 1 260px;
+    min-width: 0;
+    padding: 0.85rem 1.2rem;
+    font-family: var(--font-code);
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.buscador::placeholder {
+    color: var(--text-dim);
+}
+
+.buscador:focus {
+    border-color: var(--neon);
+    box-shadow: 0 0 0 3px var(--neon-dim);
+}
+
+/* quita la "cruz" que pone el navegador en el input type=search */
+.buscador::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.buscador-cont {
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+
+
+/* ============ REJILLA DE COMPONENTES ============ */
+
+.biblioteca-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.4rem;
+}
+
+.comp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.4rem;
+}
+
+.comp-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.7rem;
+}
+
+.comp-head h3 {
+    font-family: var(--font-title);
+    font-size: 1.02rem;
+    line-height: 1.3;
+    color: var(--text);
+}
+
+.comp-nombre {
+    font-family: var(--font-code);
+    font-size: 0.74rem;
+    color: var(--neon);
+    word-break: break-word;
+}
+
+.comp-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-dim);
+    flex: 1;
+}
+
+.comp-card .btn {
+    align-self: flex-start;
+    margin-top: 0.3rem;
+}
+
+
+/* ============ PANTALLAS PEQUEÑAS ============ */
+
+@media (max-width: 640px) {
+
+    .biblioteca-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador-cont {
+        width: 100%;
+    }
+}

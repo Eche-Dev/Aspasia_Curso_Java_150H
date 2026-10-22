@@ -1,5 +1,5 @@
 # ============================================================
-#  C:\Users\mañana\Desktop\java\tools\generar-launch.ps1
+#  C:\Users\mañana\Desktop\java\Herramientas\generar-launch.ps1
 # ------------------------------------------------------------
 #  Crea .vscode\launch.json con una configuración por cada
 #  ejercicio .java de src\main\java, para poder lanzarlos con
@@ -9,7 +9,7 @@
 #        (No hace falta tocar nada a mano.)
 # ============================================================
 
-$proyecto = Join-Path (Split-Path -Parent $PSScriptRoot) "TAREAS\Novena_tarea"
+$proyecto = Join-Path (Split-Path -Parent $PSScriptRoot) "Java\Proyecto"
 $carpeta = Join-Path $proyecto "src\main\java"
 
 if (-not (Test-Path -LiteralPath $carpeta)) {

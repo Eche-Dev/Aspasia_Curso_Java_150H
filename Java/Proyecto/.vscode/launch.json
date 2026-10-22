@@ -5,7 +5,7 @@
 			"type": "java",
 			"name": "1) Dia1 Ejercicio1 - Ej1",
 			"request": "launch",
-			"mainClass": "Dia1_Ejercicio1.Ej1",
+			"mainClass": "Modulo1.Dia1_Ejercicio1.Ej1",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Compilar proyecto (javac)"
 		},		{
@@ -94,37 +94,100 @@
 			"preLaunchTask": "Compilar proyecto (javac)"
 		},		{
 			"type": "java",
-			"name": "14) Tarea4 Ejercicio2 - Compra",
+			"name": "14) Tarea4 Ejercicio1 - precioDescuento",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea4_Ejercicio1.precioDescuento",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "15) Tarea4 Ejercicio2 - Compra",
 			"request": "launch",
 			"mainClass": "Tarea4_Ejercicio2.Compra",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Compilar proyecto (javac)"
 		},		{
 			"type": "java",
-			"name": "15) Tarea4 Ejercicio3 - TemperaturaSemanales",
+			"name": "16) Tarea4 Ejercicio3 - TemperaturaSemanales",
 			"request": "launch",
 			"mainClass": "Tarea4_Ejercicio3.TemperaturaSemanales",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Compilar proyecto (javac)"
 		},		{
 			"type": "java",
-			"name": "16) Tarea4 Ejercicio3 - TempSemanales2",
+			"name": "17) Tarea4 Ejercicio3 - TempSemanales2",
 			"request": "launch",
 			"mainClass": "Tarea4_Ejercicio3.TempSemanales2",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Compilar proyecto (javac)"
 		},		{
 			"type": "java",
-			"name": "17) Tarea4 Ejercicio3 - TempSemanalesTeclado",
+			"name": "18) Tarea4 Ejercicio3 - TempSemanalesTeclado",
 			"request": "launch",
 			"mainClass": "Tarea4_Ejercicio3.TempSemanalesTeclado",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Compilar proyecto (javac)"
 		},		{
 			"type": "java",
-			"name": "18) Tarea9 Ejercicio1 - precioDescuento",
+			"name": "19) Tarea5 Ejercicio2 - ClasesNotas",
 			"request": "launch",
-			"mainClass": "Tarea9_Ejercicio1.precioDescuento",
+			"mainClass": "Modulo2.Tarea5_Ejercicio2.ClasesNotas",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "20) Tarea5 Ejercicio2 - ClasesNotasAvanzado",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea5_Ejercicio2.ClasesNotasAvanzado",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "21) Tarea5 Ejercicio2 - ClasesNotasIntermedio",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea5_Ejercicio2.ClasesNotasIntermedio",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "22) Tarea6 Ejercicio1 - ControlAparcamiento",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea6_Ejercicio1.ControlAparcamiento",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "23) Tarea6 Ejercicio1 - Estacionamiento",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea6_Ejercicio1.Estacionamiento",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "24) Tarea6 Ejercicio1 - EstacionamientoAvanzado",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea6_Ejercicio1.EstacionamientoAvanzado",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "25) Tarea6 Ejercicio1 - EstacionamientoBasico",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea6_Ejercicio1.EstacionamientoBasico",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "26) Tarea6 Ejercicio1 - EstacionamientoIntermedio",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea6_Ejercicio1.EstacionamientoIntermedio",
+			"console": "integratedTerminal",
+			"preLaunchTask": "Compilar proyecto (javac)"
+		},		{
+			"type": "java",
+			"name": "27) Tarea6 Ejercicio1 - EstacionamientoMain",
+			"request": "launch",
+			"mainClass": "Modulo2.Tarea6_Ejercicio1.EstacionamientoMain",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Compilar proyecto (javac)"
 		}

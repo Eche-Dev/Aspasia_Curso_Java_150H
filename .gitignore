@@ -1,0 +1,33 @@
+# ============================================================
+#  KINDRED.JAVA - Qué NO se sube al repositorio
+#  ------------------------------------------------------------
+#  Son archivos que se generan solos o que no son del proyecto:
+#  si los borras, el programa los vuelve a crear.
+# ============================================================
+
+# --- Java: código compilado (se regenera con javac / Maven) ---
+*.class
+target/
+bin/
+
+# --- Python: caché de módulos ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Node (por si algún día añades un proyecto npm) ---
+node_modules/
+
+# --- Herramientas de IA / editores ---
+.qodo/
+.cursor/
+.claude/
+
+# --- Sistema operativo ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Editores (la configuración compartida SÍ se sube) ---
+*.swp
+*~

@@ -7,6 +7,10 @@
 
 /* ============ REJILLA DE EJERCICIOS ============ */
 
+/* hueco para el botón del índice (render.js lo rellena) */
+.java-acciones:empty { display: none; }
+.java-acciones { margin-bottom: 1.5rem; }
+
 .java-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);  /* 3 tarjetas por fila en PC */
