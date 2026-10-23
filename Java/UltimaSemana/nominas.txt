@@ -1,0 +1,49 @@
+
+/*
+ * EJERCICIO: GESTIÓN DE NÓMINAS DE UNA EMPRESA
+ *
+ * ENUNCIADO:
+ *
+ * Crear un programa en Java que permita calcular las nóminas
+ * de varios trabajadores.
+ *
+ * El programa deberá:
+ *
+ * 1. Pedir cuántos trabajadores se van a registrar.
+ * 2. Para cada trabajador solicitar:
+ *    - Nombre.
+ *    - Horas trabajadas durante el mes.
+ *    - Precio por hora.
+ *    - Años de antigüedad.
+ *
+ * 3. Calcular el salario bruto:
+ *    Salario bruto = horas * precio por hora.
+ *
+ * 4. Calcular un complemento por antigüedad:
+ *    - Menos de 3 años: 0%.
+ *    - Entre 3 y 5 años: 5%.
+ *    - Más de 5 años: 10%.
+ *
+ * 5. Aplicar una retención sobre el salario bruto
+ *    más el complemento:
+ *    - Menos de 1200 euros: 8%.
+ *    - Entre 1200 y 2000 euros: 12%.
+ *    - Más de 2000 euros: 15%.
+ *
+ * 6. Calcular el salario neto mensual.
+ * 7. Calcular el salario neto anual (12 pagas).
+ * 8. Mostrar la nómina de cada trabajador.
+ *
+ * 9. Al finalizar, mostrar:
+ *    - Total de salarios netos mensuales.
+ *    - Salario neto mensual medio.
+ *    - Trabajador con el salario neto más alto.
+ *
+ * REQUISITOS:
+ * - Utilizar Scanner.
+ * - Utilizar un bucle for.
+ * - Utilizar if, else if y else.
+ * - Crear métodos void y métodos con return.
+ * - Utilizar parámetros en los métodos.
+ * - No permitir valores negativos.
+ */

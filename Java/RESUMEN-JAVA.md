@@ -3,10 +3,10 @@
 ----------------------------------------------------------------
  Este archivo lo crea ACTUALIZAR.bat con los encabezados que
  tiene cada ejercicio. NO lo edites a mano: se reescribe solo.
- Generado el 22/10/2026 11:37
+ Generado el 23/10/2026 10:32
 ================================================================
 
- Hay 31 ejercicios. Cada bloque es un ejercicio:
+ Hay 32 ejercicios. Cada bloque es un ejercicio:
  primero su carpeta, luego su titulo y su descripcion, y al final
  los encabezados que lleva escritos el propio archivo .java.
 
@@ -449,8 +449,8 @@
  UltimaSemana
 ================================================================
 
- Calculadoradesalarios
-   Ejercicio de Java: UltimaSemana.
+ Calculadora de salarios
+   Pide nombre, horas trabajadas y precio por hora, y calcula el salario bruto, la retención del 10% y el salario final con Scanner y métodos.
 
    Archivo: Java/UltimaSemana/CalculadoraDeSalarios.java
 
@@ -458,8 +458,8 @@
  UltimaSemana
 ================================================================
 
- Calculadoradesalariosavanzado
-   Ejercicio de Java: UltimaSemana.
+ Calculadora de salarios (avanzado)
+   Trabaja por jornada: pide departamento, hora de llegada y salida, parte entre horas normales y extras, y suma la comida de la empresa o de fuera.
 
    Archivo: Java/UltimaSemana/CalculadoraDeSalariosAvanzado.java
 
@@ -467,8 +467,26 @@
  UltimaSemana
 ================================================================
 
- Calculadoradesalariosintermedio
-   Ejercicio de Java: UltimaSemana.
+ Calculadora de salarios (intermedio)
+   Separa horas normales (40) de horas extras a 15€ y pregunta el tipo de contrato: si es legal aplica la retención y si no, paga entero.
 
    Archivo: Java/UltimaSemana/CalculadoraDeSalariosIntermedio.java
+
+================================================================
+ UltimaSemana
+================================================================
+
+ Gestión de nóminas
+   Registra a los trabajadores de una empresa (nombre, horas, precio hora y antigüedad) y calcula el salario bruto, el complemento, la retención, el neto mensual y el neto anual de 12 pagas.
+
+   Archivo: Java/UltimaSemana/GestiosNomina.java
+   Encabezados del ejercicio:
+     * Gestión de nóminas de una empresa.
+     * El programa pide cuántos trabajadores se registran y, para cada uno, su
+     * nombre, horas trabajadas, precio por hora y años de antigüedad. Con esos
+     * datos calcula el salario bruto, el complemento por antigüedad, la
+     * retención, el salario neto mensual y el neto anual (12 pagas).
+     * Requisitos cubiertos: Scanner, bucle for, if / else if / else,
+     * métodos void y con return, parámetros en los métodos y ninguna
+     * entrada negativa.
 

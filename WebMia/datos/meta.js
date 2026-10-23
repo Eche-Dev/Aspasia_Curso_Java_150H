@@ -411,6 +411,35 @@ var META_JAVA = {
         "desc": "Borrador inicial del control de estacionamiento: la primera versión del ejercicio, con el cálculo de la tarifa y el descuento por permanencia.",
         "tags": ["Java", "Tarea"],
         "badge": "Hecho"
+    },
+
+    // ---- Última semana (Java sin proyecto Maven) ----
+    "Java/UltimaSemana/CalculadoraDeSalarios.java": {
+        "titulo": "Calculadora de salarios",
+        "desc": "Pide nombre, horas trabajadas y precio por hora, y calcula el salario bruto, la retención del 10% y el salario final con Scanner y métodos.",
+        "tags": ["Java", "Scanner"],
+        "badge": "Hecho"
+    },
+
+    "Java/UltimaSemana/CalculadoraDeSalariosIntermedio.java": {
+        "titulo": "Calculadora de salarios (intermedio)",
+        "desc": "Separa horas normales (40) de horas extras a 15€ y pregunta el tipo de contrato: si es legal aplica la retención y si no, paga entero.",
+        "tags": ["Java", "Scanner"],
+        "badge": "Hecho"
+    },
+
+    "Java/UltimaSemana/CalculadoraDeSalariosAvanzado.java": {
+        "titulo": "Calculadora de salarios (avanzado)",
+        "desc": "Trabaja por jornada: pide departamento, hora de llegada y salida, parte entre horas normales y extras, y suma la comida de la empresa o de fuera.",
+        "tags": ["Java", "Scanner"],
+        "badge": "Hecho"
+    },
+
+    "Java/UltimaSemana/GestiosNomina.java": {
+        "titulo": "Gestión de nóminas",
+        "desc": "Registra a los trabajadores de una empresa (nombre, horas, precio hora y antigüedad) y calcula el salario bruto, el complemento, la retención, el neto mensual y el neto anual de 12 pagas.",
+        "tags": ["Java", "Scanner", "POO"],
+        "badge": "Hecho"
     }
 
 };
